@@ -1,13 +1,13 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const items = [];
 
-    // Mock 100 image items
+    // Mock 100 image items with zero-padded filenames
     for (let i = 1; i <= 100; i++) {
+        const padded = String(i).padStart(3, '0');
         items.push({
             type: 'image',
-            src: `assets/images/image_${i}.jpg`,
+            src: `assets/images/image_${padded}.jpg`,
             title: `Artwork ${i}`
         });
     }
