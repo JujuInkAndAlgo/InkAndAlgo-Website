@@ -3,26 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkAndAlgo Studio</title>
+    <title>InkAndAlgo Studio - Where Art Meets Algorithm</title>
+    <meta name="description" content="Explore original works created at the intersection of creativity and code. Digital art, generative design, and algorithmic creativity.">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
 <body>
     <header>
-        <h1>InkAndAlgo Studio</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="gallery.html">Gallery</a>
-        </nav>
+        <div class="header-content">
+            <h1>InkAndAlgo Studio</h1>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
+
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <h2>Where Art Meets Algorithm</h2>
-            <p>Explore original works created at the intersection of creativity and code.</p>
-            <a href="gallery.html" class="cta-button">View Gallery</a>
+            <div class="hero-content">
+                <h2>Where Art Meets Algorithm</h2>
+                <p>Discover the fascinating world where creativity and code converge. We create unique digital artworks using cutting-edge algorithms, generative design, and artistic vision.</p>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="cta-button">Explore Gallery</a>
+                    <a href="#about" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h3 class="section-title">What We Create</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Digital Art</h4>
+                        <p>Unique pieces created through algorithmic processes and artistic direction</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Generative Design</h4>
+                        <p>Dynamic artworks that evolve and change based on mathematical principles</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔮</div>
+                        <h4>Interactive Experiences</h4>
+                        <p>Engaging digital experiences that respond to user interaction</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h4>Custom Commissions</h4>
+                        <p>Bespoke artworks tailored to your vision and requirements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>About InkAndAlgo</h3>
+                        <p>We are a creative studio that bridges the gap between traditional artistry and modern technology. Our work explores the fascinating intersection where human creativity meets computational power.</p>
+                        <p>Using advanced algorithms, machine learning, and creative coding, we produce artworks that are both visually stunning and conceptually intriguing. Each piece is a unique exploration of the relationship between art and science.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Artworks Created</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="geometric-pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <h3 class="section-title">Our Creative Process</h3>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h4>Conceptualization</h4>
+                        <p>We start with a creative vision and explore how algorithms can bring it to life</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h4>Algorithm Design</h4>
+                        <p>Custom algorithms are developed to generate the desired artistic patterns</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h4>Iteration & Refinement</h4>
+                        <p>Multiple iterations refine the output until the perfect balance is achieved</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <h4>Final Artwork</h4>
+                        <p>The completed piece is prepared for display or digital delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h3>Ready to Explore?</h3>
+                    <p>Discover our collection of unique algorithmic artworks and find the perfect piece for your space.</p>
+                    <a href="gallery.html" class="cta-button large">View Our Gallery</a>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 InkAndAlgo LLC. All rights reserved.</p>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>InkAndAlgo Studio</h4>
+                <p>Creating at the intersection of art and technology</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>hello@inkandalgo.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 InkAndAlgo LLC. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
