@@ -11,7 +11,21 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>InkAndAlgo Studio</h1>
+            <div class="logo-container">
+                <svg class="logo" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.9"/>
+                    <path d="M15 20 Q25 15 35 20 Q25 25 15 30 Q25 35 35 30" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="20" cy="22" r="2" fill="white"/>
+                    <circle cx="30" cy="28" r="2" fill="white"/>
+                </svg>
+                <h1>InkAndAlgo Studio</h1>
+            </div>
             <nav>
                 <a href="index.html" class="active">Home</a>
                 <a href="gallery.html">Gallery</a>
@@ -24,6 +38,68 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
+            <div class="hero-image">
+                <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+                        </linearGradient>
+                        <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:0.4" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Background shapes -->
+                    <rect width="400" height="300" fill="url(#heroGradient1)" rx="20"/>
+                    
+                    <!-- Abstract algorithmic art elements -->
+                    <g filter="url(#glow)">
+                        <!-- Floating circles representing data points -->
+                        <circle cx="80" cy="80" r="15" fill="#2563eb" opacity="0.6">
+                            <animate attributeName="cy" values="80;70;80" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="320" cy="120" r="12" fill="#3b82f6" opacity="0.5">
+                            <animate attributeName="cx" values="320;330;320" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="200" r="18" fill="#60a5fa" opacity="0.4">
+                            <animate attributeName="r" values="18;22;18" dur="5s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Connecting lines representing algorithms -->
+                        <line x1="80" y1="80" x2="200" y2="200" stroke="#2563eb" stroke-width="2" opacity="0.3">
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="200" y1="200" x2="320" y2="120" stroke="#3b82f6" stroke-width="2" opacity="0.3">
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="320" y1="120" x2="80" y2="80" stroke="#60a5fa" stroke-width="2" opacity="0.3">
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite"/>
+                        </line>
+                        
+                        <!-- Geometric shapes representing art elements -->
+                        <rect x="150" y="60" width="20" height="20" fill="#2563eb" opacity="0.5" transform="rotate(45 160 70)">
+                            <animateTransform attributeName="transform" type="rotate" values="45 160 70;405 160 70" dur="8s" repeatCount="indefinite"/>
+                        </rect>
+                        <polygon points="280,180 290,160 300,180" fill="#3b82f6" opacity="0.6">
+                            <animate attributeName="opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite"/>
+                        </polygon>
+                        
+                        <!-- Wave-like elements representing creativity -->
+                        <path d="M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250" stroke="#dbeafe" stroke-width="3" fill="none" opacity="0.4">
+                            <animate attributeName="d" values="M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250;M50 250 Q100 270 150 250 Q200 230 250 250 Q300 270 350 250;M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250" dur="7s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                </svg>
+            </div>
             <div class="hero-content">
                 <h2>Where Art Meets Algorithm</h2>
                 <p>Discover the fascinating world where creativity and code converge. We create unique digital artworks using cutting-edge algorithms, generative design, and artistic vision.</p>
