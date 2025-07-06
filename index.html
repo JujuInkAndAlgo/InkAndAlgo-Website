@@ -49,8 +49,12 @@
                             <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.2" />
                             <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:0.4" />
                         </linearGradient>
+                        <linearGradient id="hairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                        </linearGradient>
                         <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                             <feMerge> 
                                 <feMergeNode in="coloredBlur"/>
                                 <feMergeNode in="SourceGraphic"/>
@@ -58,45 +62,150 @@
                         </filter>
                     </defs>
                     
-                    <!-- Background shapes -->
+                    <!-- Background -->
                     <rect width="400" height="300" fill="url(#heroGradient1)" rx="20"/>
                     
-                    <!-- Abstract algorithmic art elements -->
+                    <!-- Women in Computer Science Scene -->
                     <g filter="url(#glow)">
-                        <!-- Floating circles representing data points -->
-                        <circle cx="80" cy="80" r="15" fill="#2563eb" opacity="0.6">
-                            <animate attributeName="cy" values="80;70;80" dur="4s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="320" cy="120" r="12" fill="#3b82f6" opacity="0.5">
-                            <animate attributeName="cx" values="320;330;320" dur="3s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="200" cy="200" r="18" fill="#60a5fa" opacity="0.4">
-                            <animate attributeName="r" values="18;22;18" dur="5s" repeatCount="indefinite"/>
-                        </circle>
+                        <!-- First woman - Computer Scientist -->
+                        <g transform="translate(80, 120)">
+                            <!-- Hair -->
+                            <path d="M0 -15 Q-5 -25 -15 -20 Q-20 -15 -15 -5 Q-10 0 0 0 Q10 0 15 -5 Q20 -15 15 -20 Q5 -25 0 -15" fill="url(#hairGradient)"/>
+                            <!-- Head -->
+                            <circle cx="0" cy="0" r="12" fill="#fbbf24"/>
+                            <!-- Glasses -->
+                            <circle cx="-6" cy="-2" r="4" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+                            <circle cx="6" cy="-2" r="4" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+                            <line x1="-2" y1="-2" x2="2" y2="-2" stroke="#2563eb" stroke-width="1.5"/>
+                            <!-- Body -->
+                            <rect x="-8" y="12" width="16" height="20" fill="#3b82f6" rx="2"/>
+                            <!-- Arms -->
+                            <rect x="-12" y="15" width="4" height="12" fill="#3b82f6" rx="2"/>
+                            <rect x="8" y="15" width="4" height="12" fill="#3b82f6" rx="2"/>
+                            <!-- Hands typing -->
+                            <circle cx="-10" cy="27" r="2" fill="#fbbf24"/>
+                            <circle cx="10" cy="27" r="2" fill="#fbbf24"/>
+                        </g>
                         
-                        <!-- Connecting lines representing algorithms -->
-                        <line x1="80" y1="80" x2="200" y2="200" stroke="#2563eb" stroke-width="2" opacity="0.3">
-                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="200" y1="200" x2="320" y2="120" stroke="#3b82f6" stroke-width="2" opacity="0.3">
-                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="320" y1="120" x2="80" y2="80" stroke="#60a5fa" stroke-width="2" opacity="0.3">
-                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite"/>
-                        </line>
+                        <!-- Second woman - Data Scientist -->
+                        <g transform="translate(200, 140)">
+                            <!-- Hair -->
+                            <path d="M0 -15 Q-8 -20 -12 -10 Q-15 0 -8 5 Q-4 8 0 5 Q4 8 8 5 Q15 0 12 -10 Q8 -20 0 -15" fill="#dc2626"/>
+                            <!-- Head -->
+                            <circle cx="0" cy="0" r="12" fill="#fbbf24"/>
+                            <!-- Lab coat -->
+                            <rect x="-10" y="12" width="20" height="25" fill="white" rx="2"/>
+                            <rect x="-8" y="14" width="16" height="8" fill="#3b82f6" rx="1"/>
+                            <!-- Arms -->
+                            <rect x="-12" y="15" width="4" height="15" fill="white" rx="2"/>
+                            <rect x="8" y="15" width="4" height="15" fill="white" rx="2"/>
+                            <!-- Hands holding data -->
+                            <circle cx="-10" cy="30" r="2" fill="#fbbf24"/>
+                            <circle cx="10" cy="30" r="2" fill="#fbbf24"/>
+                        </g>
                         
-                        <!-- Geometric shapes representing art elements -->
-                        <rect x="150" y="60" width="20" height="20" fill="#2563eb" opacity="0.5" transform="rotate(45 160 70)">
-                            <animateTransform attributeName="transform" type="rotate" values="45 160 70;405 160 70" dur="8s" repeatCount="indefinite"/>
-                        </rect>
-                        <polygon points="280,180 290,160 300,180" fill="#3b82f6" opacity="0.6">
-                            <animate attributeName="opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite"/>
-                        </polygon>
+                        <!-- Third woman - AI Researcher -->
+                        <g transform="translate(320, 130)">
+                            <!-- Hair -->
+                            <path d="M0 -15 Q-5 -20 -10 -15 Q-12 -8 -8 -2 Q-4 2 0 0 Q4 2 8 -2 Q12 -8 10 -15 Q5 -20 0 -15" fill="#059669"/>
+                            <!-- Head -->
+                            <circle cx="0" cy="0" r="12" fill="#fbbf24"/>
+                            <!-- Tech headset -->
+                            <ellipse cx="0" cy="-8" rx="8" ry="3" fill="#1f2937" opacity="0.8"/>
+                            <rect x="-2" y="-8" width="4" height="6" fill="#1f2937" opacity="0.8"/>
+                            <!-- Body -->
+                            <rect x="-8" y="12" width="16" height="20" fill="#7c3aed" rx="2"/>
+                            <!-- Arms -->
+                            <rect x="-12" y="15" width="4" height="12" fill="#7c3aed" rx="2"/>
+                            <rect x="8" y="15" width="4" height="12" fill="#7c3aed" rx="2"/>
+                            <!-- Hands with hologram -->
+                            <circle cx="-10" cy="27" r="2" fill="#fbbf24"/>
+                            <circle cx="10" cy="27" r="2" fill="#fbbf24"/>
+                        </g>
                         
-                        <!-- Wave-like elements representing creativity -->
-                        <path d="M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250" stroke="#dbeafe" stroke-width="3" fill="none" opacity="0.4">
-                            <animate attributeName="d" values="M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250;M50 250 Q100 270 150 250 Q200 230 250 250 Q300 270 350 250;M50 250 Q100 230 150 250 Q200 270 250 250 Q300 230 350 250" dur="7s" repeatCount="indefinite"/>
-                        </path>
+                        <!-- Computer screens and technology elements -->
+                        <g transform="translate(80, 180)">
+                            <!-- Laptop -->
+                            <rect x="-15" y="0" width="30" height="20" fill="#1f2937" rx="2"/>
+                            <rect x="-12" y="2" width="24" height="16" fill="#3b82f6" opacity="0.8"/>
+                            <!-- Code on screen -->
+                            <text x="-10" y="8" font-family="monospace" font-size="3" fill="white">function() {</text>
+                            <text x="-8" y="12" font-family="monospace" font-size="3" fill="white">  return art;</text>
+                            <text x="-10" y="16" font-family="monospace" font-size="3" fill="white">}</text>
+                        </g>
+                        
+                        <g transform="translate(200, 200)">
+                            <!-- Data visualization -->
+                            <rect x="-12" y="0" width="24" height="16" fill="white" rx="2"/>
+                            <!-- Bar chart -->
+                            <rect x="-8" y="12" width="3" height="4" fill="#2563eb"/>
+                            <rect x="-4" y="10" width="3" height="6" fill="#3b82f6"/>
+                            <rect x="0" y="8" width="3" height="8" fill="#60a5fa"/>
+                            <rect x="4" y="6" width="3" height="10" fill="#93c5fd"/>
+                            <rect x="8" y="4" width="3" height="12" fill="#dbeafe"/>
+                        </g>
+                        
+                        <g transform="translate(320, 190)">
+                            <!-- Holographic display -->
+                            <ellipse cx="0" cy="0" rx="15" ry="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="0" cy="0" rx="12" ry="9" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <!-- Neural network nodes -->
+                            <circle cx="-8" cy="-6" r="2" fill="#7c3aed">
+                                <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="8" cy="-6" r="2" fill="#a855f7">
+                                <animate attributeName="r" values="2;3;2" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="0" cy="6" r="2" fill="#c084fc">
+                                <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Floating code and data elements -->
+                        <g>
+                            <!-- Binary code -->
+                            <text x="50" y="50" font-family="monospace" font-size="8" fill="#2563eb" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                                1010
+                            </text>
+                            <text x="350" y="80" font-family="monospace" font-size="8" fill="#3b82f6" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite"/>
+                                1101
+                            </text>
+                            
+                            <!-- Mathematical symbols -->
+                            <text x="30" y="250" font-family="serif" font-size="12" fill="#7c3aed" opacity="0.7">∑</text>
+                            <text x="370" y="270" font-family="serif" font-size="12" fill="#a855f7" opacity="0.7">π</text>
+                            
+                            <!-- Connecting lines showing collaboration -->
+                            <line x1="120" y1="150" x2="180" y2="170" stroke="#2563eb" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="6s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="240" y1="170" x2="300" y2="160" stroke="#3b82f6" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="7s" repeatCount="indefinite"/>
+                            </line>
+                        </g>
+                        
+                        <!-- Empowerment symbols -->
+                        <g>
+                            <!-- Lightbulb for innovation -->
+                            <circle cx="60" cy="60" r="8" fill="#fbbf24" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <path d="M60 52 L58 48 L62 48 Z" fill="#fbbf24" opacity="0.8"/>
+                            
+                            <!-- DNA helix for science -->
+                            <path d="M340 70 Q345 75 340 80 Q335 85 340 90 Q345 95 340 100" stroke="#059669" stroke-width="1.5" fill="none" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M340 70 Q335 75 340 80 Q345 85 340 90 Q335 95 340 100" stroke="#10b981" stroke-width="1.5" fill="none" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
                     </g>
                 </svg>
             </div>
