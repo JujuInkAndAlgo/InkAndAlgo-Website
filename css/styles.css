@@ -1,5 +1,14 @@
 /* Modern Design for InkAndAlgo Studio - Helvetica Neue & Blue/Gray Theme */
 
+/* Cross-browser compatibility fixes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* CSS Variables for modern blue/gray color scheme */
 :root {
     --primary-blue: #2563eb;
@@ -23,10 +32,29 @@
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Fallback for older browsers that don't support CSS variables */
+@supports not (--custom: property) {
+    :root {
+        --primary-blue: #2563eb;
+        --secondary-blue: #3b82f6;
+        --accent-blue: #60a5fa;
+        --light-blue: #dbeafe;
+        --dark-blue: #1e40af;
+        --white: #ffffff;
+        --light-gray: #f8fafc;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-300: #cbd5e1;
+        --gray-400: #94a3b8;
+        --gray-500: #64748b;
+        --gray-600: #475569;
+        --gray-700: #334155;
+        --gray-800: #1e293b;
+        --gray-900: #0f172a;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
 }
 
 body {
@@ -36,6 +64,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-animation: fadeIn 1s ease-out;
     animation: fadeIn 1s ease-out;
 }
 
@@ -47,6 +76,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    background: 
+        -webkit-radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
     background: 
         radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
@@ -65,6 +97,7 @@ header {
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
     padding: 1.5rem;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -74,11 +107,28 @@ header {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: 2rem) {
+    .header-content > * {
+        margin-right: 2rem;
+    }
+    .header-content > *:last-child {
+        margin-right: 0;
+    }
 }
 
 header h1 {
@@ -91,9 +141,22 @@ header h1 {
 
 /* Navigation with clean design */
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: 2rem) {
+    nav > * {
+        margin-right: 2rem;
+    }
+    nav > *:last-child {
+        margin-right: 0;
+    }
 }
 
 nav a {
@@ -102,6 +165,7 @@ nav a {
     font-weight: 500;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     position: relative;
 }
@@ -145,16 +209,32 @@ main {
     margin-bottom: 1.5rem;
     color: var(--gray-900);
     letter-spacing: -0.025em;
+    -webkit-animation: slideInUp 1s ease-out;
     animation: slideInUp 1s ease-out;
+}
+
+@-webkit-keyframes slideInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideInUp {
     from {
         opacity: 0;
+        -webkit-transform: translateY(30px);
         transform: translateY(30px);
     }
     to {
         opacity: 1;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 }
@@ -166,15 +246,32 @@ main {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    -webkit-animation: slideInUp 1s ease-out 0.2s both;
     animation: slideInUp 1s ease-out 0.2s both;
 }
 
 .hero-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-animation: slideInUp 1s ease-out 0.4s both;
     animation: slideInUp 1s ease-out 0.4s both;
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: 1rem) {
+    .hero-buttons > * {
+        margin-right: 1rem;
+    }
+    .hero-buttons > *:last-child {
+        margin-right: 0;
+    }
 }
 
 /* Call-to-action button with clean design */
@@ -187,6 +284,7 @@ main {
     border-radius: 8px;
     font-weight: 600;
     font-size: 1.1rem;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     box-shadow: var(--shadow);
     border: none;
@@ -205,6 +303,8 @@ main {
 }
 
 .cta-button:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
@@ -230,10 +330,29 @@ main {
 }
 
 .features-grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .features-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .features-grid > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 250px;
+        flex: 1 1 250px;
+        margin: 1rem;
+    }
 }
 
 .feature-card {
@@ -242,11 +361,14 @@ main {
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow);
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     border: 1px solid var(--gray-200);
 }
 
 .feature-card:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
@@ -277,10 +399,31 @@ main {
 }
 
 .about-content {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .about-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .about-content > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 45%;
+        flex: 1 1 45%;
+        margin: 2rem;
+    }
 }
 
 .about-text h3 {
@@ -299,10 +442,29 @@ main {
 }
 
 .stats {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .stats {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .stats > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 30%;
+        flex: 1 1 30%;
+        margin: 1rem;
+    }
 }
 
 .stat {
@@ -333,6 +495,9 @@ main {
     width: 100%;
     height: 100%;
     background: 
+        -webkit-radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    background: 
         radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
     border-radius: 12px;
@@ -345,10 +510,29 @@ main {
 }
 
 .process-steps {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .process-steps {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .process-steps > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 250px;
+        flex: 1 1 250px;
+        margin: 1rem;
+    }
 }
 
 .step {
@@ -357,12 +541,15 @@ main {
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow);
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     border: 1px solid var(--gray-200);
     position: relative;
 }
 
 .step:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
@@ -373,8 +560,14 @@ main {
     background: var(--primary-blue);
     color: var(--white);
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
@@ -433,9 +626,28 @@ footer {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .footer-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .footer-content > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 250px;
+        flex: 1 1 250px;
+        margin: 1.5rem;
+    }
 }
 
 .footer-section h4 {
@@ -452,9 +664,21 @@ footer {
 }
 
 .social-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: 1rem) {
+    .social-links > * {
+        margin-right: 1rem;
+    }
+    .social-links > *:last-child {
+        margin-right: 0;
+    }
 }
 
 .social-links a {
@@ -463,17 +687,26 @@ footer {
     height: 40px;
     background: var(--gray-800);
     border-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-decoration: none;
     font-size: 1.2rem;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     color: var(--white);
 }
 
 .social-links a:hover {
     background: var(--primary-blue);
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
 }
 
@@ -491,10 +724,29 @@ footer {
 
 /* Gallery grid enhancements */
 .gallery-grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2rem;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .gallery-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .gallery-grid > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 280px;
+        flex: 1 1 280px;
+        margin: 1rem;
+    }
 }
 
 .gallery-grid .item {
@@ -503,11 +755,14 @@ footer {
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow);
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     border: 1px solid var(--gray-200);
 }
 
 .gallery-grid .item:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
@@ -515,11 +770,16 @@ footer {
 .gallery-grid img, .gallery-grid video {
     width: 100%;
     border-radius: 8px;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .gallery-grid .item:hover img,
 .gallery-grid .item:hover video {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
     transform: scale(1.02);
 }
 
@@ -533,11 +793,14 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     box-shadow: var(--shadow);
 }
 
 .buy-button:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
@@ -545,6 +808,9 @@ footer {
 /* Responsive design */
 @media (max-width: 768px) {
     .header-content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         text-align: center;
     }
@@ -571,31 +837,41 @@ footer {
     }
     
     .hero-buttons {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
     
     .about-content {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
     .stats {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     
     .features-grid,
     .process-steps {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
     
     .footer-content {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         text-align: center;
     }
     
     .gallery-grid {
+        -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
         padding: 1rem;
@@ -603,7 +879,50 @@ footer {
 }
 
 /* Additional animations for page load */
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+    /* Fix for Safari sticky positioning */
+    header {
+        position: -webkit-sticky;
+        position: sticky;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* Fix for Safari flexbox gap */
+    .header-content,
+    nav,
+    .hero-buttons,
+    .social-links {
+        gap: 2rem;
+    }
+    
+    /* Fix for Safari grid gap */
+    .features-grid,
+    .about-content,
+    .stats,
+    .process-steps,
+    .footer-content,
+    .gallery-grid {
+        gap: 2rem;
+    }
+}
+
+/* Chrome-specific fixes */
+@supports (-webkit-appearance: none) and (not (-webkit-touch-callout: none)) {
+    /* Chrome-specific optimizations */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
