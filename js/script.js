@@ -11,45 +11,42 @@ document.addEventListener("DOMContentLoaded", function () {
     let items = [];
     let filteredItems = [];
 
-    // Artistic categories for young artist's work
-    const categories = ['animals', 'abstract', 'flowers', 'fantasy', 'custom'];
-    const prices = [25, 35, 45, 55, 75, 95, 120, 150]; // More affordable prices for young artist
+    // Futuristic algorithmic categories
+    const categories = ['generative', 'algorithmic', 'interactive'];
+    const prices = [250, 350, 450, 550, 750, 950, 1200, 1500];
 
-    // Sample artwork titles and descriptions
+    // Sample algorithmic artwork data
     const artworkData = [
-        { title: "Rainbow Unicorn", category: "fantasy", description: "A magical unicorn with a colorful rainbow mane, painted with lots of sparkles and love!" },
-        { title: "Sunny Garden", category: "flowers", description: "A bright garden full of happy flowers in all the colors of the rainbow." },
-        { title: "Happy Puppy", category: "animals", description: "A cute puppy playing in a field of flowers, painted with warm colors and joy." },
-        { title: "Colorful Dreams", category: "abstract", description: "An abstract painting with swirling colors that represent happy dreams and imagination." },
-        { title: "Butterfly Garden", category: "flowers", description: "Beautiful butterflies dancing among colorful flowers in a magical garden." },
-        { title: "Space Adventure", category: "fantasy", description: "A rocket ship exploring a colorful galaxy with stars and planets." },
-        { title: "Ocean Friends", category: "animals", description: "Friendly sea creatures swimming in a bright blue ocean with coral reefs." },
-        { title: "Rainbow Heart", category: "abstract", description: "A big heart filled with all the colors of the rainbow, spreading love and happiness." },
-        { title: "Forest Friends", category: "animals", description: "Cute forest animals having a picnic under a big tree with flowers." },
-        { title: "Magic Castle", category: "fantasy", description: "A beautiful castle in the clouds with rainbow bridges and magical creatures." },
-        { title: "Spring Flowers", category: "flowers", description: "Fresh spring flowers blooming in a garden, painted with soft pastel colors." },
-        { title: "Dancing Colors", category: "abstract", description: "Abstract shapes and colors that seem to dance and move across the canvas." },
-        { title: "Farm Animals", category: "animals", description: "Happy farm animals including cows, pigs, and chickens in a sunny farmyard." },
-        { title: "Fairy Tale", category: "fantasy", description: "A magical scene with fairies, dragons, and princesses in an enchanted forest." },
-        { title: "Wildflower Meadow", category: "flowers", description: "A beautiful meadow filled with wildflowers in every color imaginable." }
+        { title: "Neural Network Symphony", category: "generative", description: "A dynamic generative artwork created through neural network algorithms, exploring the intersection of artificial intelligence and artistic expression." },
+        { title: "Quantum Fractal Patterns", category: "algorithmic", description: "Complex fractal patterns generated using quantum-inspired algorithms, creating infinite detail at every scale." },
+        { title: "Interactive Data Flow", category: "interactive", description: "An interactive digital experience that responds to user input, visualizing data streams in real-time." },
+        { title: "Algorithmic Harmony", category: "generative", description: "Generative art piece that creates harmonious visual patterns through mathematical algorithms and creative coding." },
+        { title: "Digital Evolution", category: "algorithmic", description: "An algorithmic artwork that evolves and adapts over time, showcasing the beauty of computational creativity." },
+        { title: "Virtual Reality Matrix", category: "interactive", description: "Interactive virtual reality experience that allows users to explore algorithmic art in immersive 3D space." },
+        { title: "Machine Learning Dreams", category: "generative", description: "Artwork generated through machine learning algorithms, creating dreamlike visual compositions." },
+        { title: "Computational Aesthetics", category: "algorithmic", description: "Algorithmic design that explores the mathematical foundations of beauty and visual harmony." },
+        { title: "Digital Consciousness", category: "interactive", description: "Interactive installation that simulates digital consciousness through responsive algorithmic art." },
+        { title: "Fractal Universe", category: "generative", description: "Generative fractal art that creates infinite universes within finite computational space." },
+        { title: "Algorithmic Poetry", category: "algorithmic", description: "Visual poetry created through algorithmic processes, where code becomes art." },
+        { title: "Neural Art Gallery", category: "interactive", description: "Interactive gallery where neural networks create and curate digital artworks in real-time." },
+        { title: "Quantum Art Generator", category: "generative", description: "Quantum-inspired generative art that explores the probabilistic nature of creativity." },
+        { title: "Digital DNA", category: "algorithmic", description: "Algorithmic artwork that visualizes digital genetic codes and evolutionary patterns." },
+        { title: "Virtual Sculpture Garden", category: "interactive", description: "Interactive 3D sculpture garden where users can create and manipulate algorithmic sculptures." }
     ];
 
-    // Mock 50 image items with artistic data
-    for (let i = 1; i <= 50; i++) {
-        const padded = String(i).padStart(3, '0');
-        const artwork = artworkData[i % artworkData.length] || artworkData[0];
-        const price = prices[Math.floor(Math.random() * prices.length)];
-        
-        items.push({
-            type: 'image',
-            src: `assets/images/image_${padded}.jpg`,
-            title: artwork.title + (i > artworkData.length ? ` ${Math.floor(i / artworkData.length) + 1}` : ''),
-            category: artwork.category,
-            price: price,
-            description: artwork.description,
-            created: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
-        });
-    }
+    // Only create one item - the first image
+    const artwork = artworkData[0];
+    const price = prices[Math.floor(Math.random() * prices.length)];
+    
+    items.push({
+        type: 'image',
+        src: 'assets/images/image_001.jpg',
+        title: artwork.title,
+        category: artwork.category,
+        price: price,
+        description: artwork.description,
+        created: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
+    });
 
     // Initialize filtered items
     filteredItems = [...items];
@@ -61,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (filteredItems.length === 0) {
             gallery.innerHTML = `
                 <div class="no-results">
-                    <h3>No artwork found</h3>
+                    <h3>No artworks found</h3>
                     <p>Try adjusting your search or filter criteria.</p>
                 </div>
             `;
@@ -120,11 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Mock popularity based on price (higher price = more popular)
                 filteredItems.sort((a, b) => b.price - a.price);
                 break;
-            case 'price-low':
+            case 'price':
                 filteredItems.sort((a, b) => a.price - b.price);
-                break;
-            case 'price-high':
-                filteredItems.sort((a, b) => b.price - a.price);
                 break;
         }
 
@@ -170,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.purchaseArtwork = function(index) {
         const item = filteredItems[index];
-        alert(`Thank you for your interest in "${item.title}"!\n\nPrice: $${item.price.toLocaleString()}\n\nPlease contact us to arrange payment and shipping. Each piece is made with love and will bring joy to your home! 💕`);
+        alert(`Purchase functionality for "${item.title}" - Price: $${item.price.toLocaleString()}\n\nThis would integrate with your payment system.`);
     };
 
     // Close modal

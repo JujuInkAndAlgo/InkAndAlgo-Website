@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistic Dreams - [Daughter's Name] Art Gallery</title>
-    <meta name="description" content="Discover beautiful original artwork created with love and imagination. Each piece tells a unique story and brings joy to your home.">
+    <title>InkAndAlgo Studio - Where Art Meets Algorithm</title>
+    <meta name="description" content="Explore original works created at the intersection of creativity and code. Digital art, generative design, and algorithmic creativity.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
@@ -15,25 +15,35 @@
                 <svg class="logo" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="brushGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
                         </linearGradient>
+                        <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                        </linearGradient>
                     </defs>
-                    <!-- Paint palette -->
-                    <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.9"/>
-                    <!-- Paint brush -->
-                    <path d="M15 15 L35 35 M35 35 L40 30 M35 35 L30 40" stroke="url(#brushGradient)" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <!-- Paint splashes -->
-                    <circle cx="20" cy="20" r="3" fill="#fbbf24" opacity="0.8"/>
-                    <circle cx="30" cy="15" r="2" fill="#ec4899" opacity="0.8"/>
-                    <circle cx="35" cy="25" r="2.5" fill="#8b5cf6" opacity="0.8"/>
+                    <!-- Futuristic circuit board -->
+                    <rect x="5" y="5" width="40" height="40" fill="url(#logoGradient)" opacity="0.9" rx="8"/>
+                    <!-- Circuit paths -->
+                    <path d="M10 15 L25 15 L25 10 M25 10 L40 10 M10 25 L20 25 L20 20 M20 20 L35 20 M10 35 L30 35 L30 30 M30 30 L40 30" stroke="url(#circuitGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <!-- Circuit nodes -->
+                    <circle cx="25" cy="15" r="3" fill="#00d4ff"/>
+                    <circle cx="20" cy="25" r="3" fill="#7c3aed"/>
+                    <circle cx="30" cy="35" r="3" fill="#f59e0b"/>
+                    <!-- Data flow animation -->
+                    <circle cx="15" cy="15" r="1" fill="#00d4ff" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="35" cy="25" r="1" fill="#7c3aed" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="25" cy="40" r="1" fill="#f59e0b" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+                    </circle>
                 </svg>
-                <h1>Artistic Dreams</h1>
+                <h1>InkAndAlgo Studio</h1>
             </div>
             <nav>
                 <a href="index.html" class="active">Home</a>
@@ -51,12 +61,12 @@
                 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:0.3" />
-                            <stop offset="100%" style="stop-color:#fce7f3;stop-opacity:0.4" />
+                            <stop offset="0%" style="stop-color:rgba(0, 212, 255, 0.1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(124, 58, 237, 0.2);stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#f3e8ff;stop-opacity:0.3" />
-                            <stop offset="100%" style="stop-color:#fef3c7;stop-opacity:0.4" />
+                            <stop offset="0%" style="stop-color:rgba(245, 158, 11, 0.1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 212, 255, 0.2);stop-opacity:1" />
                         </linearGradient>
                         <filter id="glow">
                             <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -70,107 +80,127 @@
                     <!-- Background -->
                     <rect width="400" height="300" fill="url(#heroGradient1)" rx="20"/>
                     
-                    <!-- Young Artist Scene -->
+                    <!-- Futuristic AI Artist Scene -->
                     <g filter="url(#glow)">
-                        <!-- Young artist -->
+                        <!-- Central AI Core -->
                         <g transform="translate(200, 150)">
-                            <!-- Hair -->
-                            <path d="M0 -20 Q-8 -25 -12 -15 Q-15 -5 -8 0 Q-4 3 0 0 Q4 3 8 0 Q15 -5 12 -15 Q8 -25 0 -20" fill="#8b5cf6"/>
-                            <!-- Head -->
-                            <circle cx="0" cy="0" r="15" fill="#fbbf24"/>
-                            <!-- Eyes -->
-                            <circle cx="-5" cy="-3" r="2" fill="#1f2937"/>
-                            <circle cx="5" cy="-3" r="2" fill="#1f2937"/>
-                            <!-- Smile -->
-                            <path d="M-5 5 Q0 10 5 5" stroke="#1f2937" stroke-width="1.5" fill="none"/>
-                            <!-- Body -->
-                            <rect x="-12" y="15" width="24" height="25" fill="#ec4899" rx="3"/>
-                            <!-- Arms -->
-                            <rect x="-15" y="18" width="6" height="15" fill="#ec4899" rx="3"/>
-                            <rect x="9" y="18" width="6" height="15" fill="#ec4899" rx="3"/>
-                            <!-- Hands -->
-                            <circle cx="-12" cy="33" r="3" fill="#fbbf24"/>
-                            <circle cx="12" cy="33" r="3" fill="#fbbf24"/>
-                        </g>
-                        
-                        <!-- Art supplies -->
-                        <g transform="translate(100, 200)">
-                            <!-- Paint palette -->
-                            <circle cx="0" cy="0" r="12" fill="#f59e0b" opacity="0.9"/>
-                            <circle cx="0" cy="0" r="8" fill="#fef3c7"/>
-                            <!-- Paint colors -->
-                            <circle cx="-4" cy="-4" r="2" fill="#ef4444"/>
-                            <circle cx="4" cy="-4" r="2" fill="#3b82f6"/>
-                            <circle cx="0" cy="4" r="2" fill="#10b981"/>
-                            <circle cx="-6" cy="2" r="2" fill="#f59e0b"/>
-                            <circle cx="6" cy="2" r="2" fill="#8b5cf6"/>
-                        </g>
-                        
-                        <g transform="translate(300, 180)">
-                            <!-- Paint brushes -->
-                            <rect x="-2" y="0" width="4" height="20" fill="#8b5cf6" rx="2"/>
-                            <rect x="-1" y="-5" width="2" height="5" fill="#f59e0b" rx="1"/>
-                            <rect x="-3" y="0" width="6" height="3" fill="#ec4899" rx="1"/>
-                        </g>
-                        
-                        <!-- Canvas with artwork -->
-                        <g transform="translate(200, 80)">
-                            <rect x="-25" y="-15" width="50" height="30" fill="white" stroke="#d1d5db" stroke-width="2" rx="3"/>
-                            <!-- Abstract artwork on canvas -->
-                            <circle cx="-10" cy="-5" r="4" fill="#fbbf24"/>
-                            <path d="M-5 5 Q5 -5 15 5" stroke="#ec4899" stroke-width="3" fill="none"/>
-                            <rect x="5" y="-8" width="8" height="8" fill="#8b5cf6" rx="2"/>
-                            <circle cx="0" cy="8" r="3" fill="#10b981"/>
-                        </g>
-                        
-                        <!-- Floating art elements -->
-                        <g>
-                            <!-- Paint splashes -->
-                            <path d="M50 50 Q55 45 60 50 Q65 55 60 60 Q55 65 50 60 Q45 55 50 50" fill="#fbbf24" opacity="0.7">
+                            <!-- AI Brain -->
+                            <circle cx="0" cy="0" r="25" fill="url(#heroGradient2)" opacity="0.8"/>
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+                            <!-- Neural network connections -->
+                            <path d="M-15 -15 Q0 -25 15 -15 Q25 0 15 15 Q0 25 -15 15 Q-25 0 -15 -15" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.7">
                                 <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
                             </path>
-                            <path d="M350 80 Q355 75 360 80 Q365 85 360 90 Q355 95 350 90 Q345 85 350 80" fill="#ec4899" opacity="0.7">
+                            <!-- Data nodes -->
+                            <circle cx="-10" cy="-10" r="3" fill="#00d4ff">
+                                <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="10" cy="-10" r="3" fill="#7c3aed">
+                                <animate attributeName="r" values="3;4;3" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="10" cy="10" r="3" fill="#f59e0b">
+                                <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="-10" cy="10" r="3" fill="#00d4ff">
+                                <animate attributeName="r" values="3;4;3" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Floating holographic displays -->
+                        <g transform="translate(100, 100)">
+                            <!-- Hologram 1 -->
+                            <ellipse cx="0" cy="0" rx="20" ry="15" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="0" cy="0" rx="15" ry="10" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <!-- Digital art preview -->
+                            <rect x="-8" y="-5" width="16" height="10" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.8"/>
+                            <circle cx="-4" cy="-2" r="1" fill="#f59e0b"/>
+                            <circle cx="4" cy="2" r="1" fill="#00d4ff"/>
+                            <path d="M-6 3 L6 -3" stroke="#7c3aed" stroke-width="1"/>
+                        </g>
+                        
+                        <g transform="translate(300, 120)">
+                            <!-- Hologram 2 -->
+                            <ellipse cx="0" cy="0" rx="18" ry="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <!-- Algorithm visualization -->
+                            <path d="M-10 -5 L-5 0 L0 -3 L5 2 L10 -1" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.8"/>
+                            <circle cx="-10" cy="-5" r="2" fill="#00d4ff"/>
+                            <circle cx="10" cy="-1" r="2" fill="#f59e0b"/>
+                        </g>
+                        
+                        <!-- Data streams -->
+                        <g>
+                            <!-- Binary data flow -->
+                            <text x="50" y="50" font-family="monospace" font-size="8" fill="#00d4ff" opacity="0.7">
                                 <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
-                            </path>
+                                1010
+                            </text>
+                            <text x="350" y="80" font-family="monospace" font-size="8" fill="#7c3aed" opacity="0.7">
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+                                1101
+                            </text>
+                            <text x="30" y="250" font-family="monospace" font-size="8" fill="#f59e0b" opacity="0.7">
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                                0110
+                            </text>
                             
-                            <!-- Stars and sparkles -->
-                            <path d="M80 60 L82 62 L80 64 L78 62 Z" fill="#fbbf24" opacity="0.8">
-                                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-                            </path>
-                            <path d="M320 120 L322 122 L320 124 L318 122 Z" fill="#ec4899" opacity="0.8">
-                                <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite"/>
-                            </path>
-                            <path d="M120 200 L122 202 L120 204 L118 202 Z" fill="#8b5cf6" opacity="0.8">
+                            <!-- Mathematical symbols -->
+                            <text x="30" y="150" font-family="serif" font-size="12" fill="#00d4ff" opacity="0.8">∑</text>
+                            <text x="370" y="200" font-family="serif" font-size="12" fill="#7c3aed" opacity="0.8">π</text>
+                            <text x="50" y="280" font-family="serif" font-size="12" fill="#f59e0b" opacity="0.8">∞</text>
+                            
+                            <!-- Connecting data lines -->
+                            <line x1="80" y1="100" x2="120" y2="120" stroke="#00d4ff" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="6s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="280" y1="120" x2="320" y2="140" stroke="#7c3aed" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="7s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="150" y1="200" x2="250" y2="180" stroke="#f59e0b" stroke-width="1" opacity="0.4" stroke-dasharray="3,3">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+                            </line>
+                        </g>
+                        
+                        <!-- Futuristic symbols -->
+                        <g>
+                            <!-- Quantum computing symbol -->
+                            <circle cx="60" cy="60" r="8" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.8">
                                 <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
-                            </path>
+                            </circle>
+                            <path d="M60 52 L60 68 M52 60 L68 60" stroke="#00d4ff" stroke-width="2" opacity="0.8"/>
                             
-                            <!-- Hearts -->
-                            <path d="M280 60 Q280 50 290 50 Q300 50 300 60 Q300 70 290 70 Q280 70 280 60" fill="#ec4899" opacity="0.6">
+                            <!-- AI consciousness symbol -->
+                            <path d="M340 70 Q345 75 340 80 Q335 85 340 90 Q345 95 340 100" stroke="#7c3aed" stroke-width="2" fill="none" opacity="0.6">
                                 <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
                             </path>
-                            <path d="M60 180 Q60 170 70 170 Q80 170 80 180 Q80 190 70 190 Q60 190 60 180" fill="#fbbf24" opacity="0.6">
-                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite"/>
+                            <path d="M340 70 Q335 75 340 80 Q345 85 340 90 Q335 95 340 100" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
                             </path>
                         </g>
                         
-                        <!-- Rainbow -->
+                        <!-- Energy field -->
                         <g transform="translate(200, 250)">
-                            <path d="M-40 0 Q-20 -15 0 -20 Q20 -15 40 0" stroke="#ef4444" stroke-width="3" fill="none" opacity="0.7"/>
-                            <path d="M-35 2 Q-15 -13 5 -18 Q25 -13 45 2" stroke="#f59e0b" stroke-width="3" fill="none" opacity="0.7"/>
-                            <path d="M-30 4 Q-10 -11 10 -16 Q30 -11 50 4" stroke="#fbbf24" stroke-width="3" fill="none" opacity="0.7"/>
-                            <path d="M-25 6 Q-5 -9 15 -14 Q35 -9 55 6" stroke="#10b981" stroke-width="3" fill="none" opacity="0.7"/>
-                            <path d="M-20 8 Q0 -7 20 -12 Q40 -7 60 8" stroke="#3b82f6" stroke-width="3" fill="none" opacity="0.7"/>
-                            <path d="M-15 10 Q5 -5 25 -10 Q45 -5 65 10" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.7"/>
+                            <ellipse cx="0" cy="0" rx="60" ry="20" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3">
+                                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="8s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="0" cy="0" rx="50" ry="15" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.2">
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10s" repeatCount="indefinite"/>
+                            </ellipse>
                         </g>
                     </g>
                 </svg>
             </div>
             <div class="hero-content">
-                <h2>Beautiful Artwork Created with Love</h2>
-                <p>Discover unique, handcrafted artwork that brings joy, color, and imagination to your home. Each piece is created with passion and tells its own special story.</p>
+                <h2>Where Art Meets Algorithm</h2>
+                <p>Discover the fascinating world where creativity and code converge. We create unique digital artworks using cutting-edge algorithms, generative design, and artistic vision.</p>
                 <div class="hero-buttons">
-                    <a href="gallery.html" class="cta-button">View Gallery</a>
-                    <a href="#about" class="cta-button secondary">Meet the Artist</a>
+                    <a href="gallery.html" class="cta-button">Explore Gallery</a>
+                    <a href="#about" class="cta-button secondary">Learn More</a>
                 </div>
             </div>
         </section>
@@ -178,27 +208,27 @@
         <!-- Features Section -->
         <section class="features">
             <div class="container">
-                <h3 class="section-title">What Makes Our Art Special</h3>
+                <h3 class="section-title">What We Create</h3>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🎨</div>
-                        <h4>Original Artwork</h4>
-                        <p>Each piece is uniquely created with love and imagination, making it one-of-a-kind</p>
+                        <h4>Digital Art</h4>
+                        <p>Unique pieces created through algorithmic processes and artistic direction</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💝</div>
-                        <h4>Made with Love</h4>
-                        <p>Every artwork is crafted with care and passion, bringing warmth to your space</p>
+                        <div class="feature-icon">⚡</div>
+                        <h4>Generative Design</h4>
+                        <p>Dynamic artworks that evolve and change based on mathematical principles</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🌈</div>
-                        <h4>Vibrant Colors</h4>
-                        <p>Bold, beautiful colors that brighten any room and lift your spirits</p>
+                        <div class="feature-icon">🔮</div>
+                        <h4>Interactive Experiences</h4>
+                        <p>Engaging digital experiences that respond to user interaction</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">✨</div>
-                        <h4>Custom Orders</h4>
-                        <p>Special requests welcome! Let us create something perfect just for you</p>
+                        <div class="feature-icon">🌟</div>
+                        <h4>Custom Commissions</h4>
+                        <p>Bespoke artworks tailored to your vision and requirements</p>
                     </div>
                 </div>
             </div>
@@ -209,42 +239,46 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>Meet the Young Artist</h3>
-                        <p>Hi! I'm [Daughter's Name], and I love creating art! I started painting when I was very little, and now I want to share my colorful creations with the world. Each piece I make comes from my imagination and brings me so much joy to create.</p>
-                        <p>I use bright colors, fun shapes, and lots of love to make artwork that will make you smile. Whether it's a painting of flowers, animals, or something from my dreams, I put my heart into every brushstroke.</p>
+                        <h3>About InkAndAlgo</h3>
+                        <p>We are a creative studio that bridges the gap between traditional artistry and modern technology. Our work explores the fascinating intersection where human creativity meets computational power.</p>
+                        <p>Using advanced algorithms, machine learning, and creative coding, we produce artworks that are both visually stunning and conceptually intriguing. Each piece is a unique exploration of the relationship between art and science.</p>
                         <div class="stats">
                             <div class="stat">
-                                <span class="stat-number">50+</span>
+                                <span class="stat-number">100+</span>
                                 <span class="stat-label">Artworks Created</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">3</span>
-                                <span class="stat-label">Years of Painting</span>
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Happy Clients</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">∞</span>
-                                <span class="stat-label">Imagination</span>
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Years Experience</span>
                             </div>
                         </div>
                     </div>
                     <div class="about-visual">
                         <div class="geometric-pattern">
-                            <!-- Artistic pattern -->
+                            <!-- Futuristic pattern -->
                             <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="patternGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:0.8" />
-                                        <stop offset="100%" style="stop-color:#fce7f3;stop-opacity:0.8" />
+                                        <stop offset="0%" style="stop-color:rgba(0, 212, 255, 0.3);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:rgba(124, 58, 237, 0.3);stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
                                 <rect width="300" height="300" fill="url(#patternGradient)" rx="20"/>
-                                <!-- Decorative elements -->
-                                <circle cx="75" cy="75" r="20" fill="#fbbf24" opacity="0.7"/>
-                                <circle cx="225" cy="75" r="15" fill="#ec4899" opacity="0.7"/>
-                                <circle cx="75" cy="225" r="18" fill="#8b5cf6" opacity="0.7"/>
-                                <circle cx="225" cy="225" r="12" fill="#10b981" opacity="0.7"/>
-                                <path d="M150 50 Q200 100 150 150 Q100 200 150 250" stroke="#f59e0b" stroke-width="4" fill="none" opacity="0.6"/>
-                                <path d="M50 150 Q100 100 150 150 Q200 200 250 150" stroke="#ec4899" stroke-width="4" fill="none" opacity="0.6"/>
+                                <!-- Circuit-like pattern -->
+                                <path d="M50 50 L150 50 L150 100 L250 100 M50 150 L200 150 L200 200 L250 200" stroke="#00d4ff" stroke-width="3" fill="none" opacity="0.6"/>
+                                <path d="M100 50 L100 150 L150 150 L150 250" stroke="#7c3aed" stroke-width="3" fill="none" opacity="0.6"/>
+                                <path d="M200 50 L200 100 L250 100 L250 250" stroke="#f59e0b" stroke-width="3" fill="none" opacity="0.6"/>
+                                <!-- Data nodes -->
+                                <circle cx="50" cy="50" r="5" fill="#00d4ff"/>
+                                <circle cx="150" cy="100" r="5" fill="#7c3aed"/>
+                                <circle cx="250" cy="200" r="5" fill="#f59e0b"/>
+                                <circle cx="100" cy="150" r="5" fill="#00d4ff"/>
+                                <circle cx="200" cy="150" r="5" fill="#7c3aed"/>
+                                <circle cx="150" cy="250" r="5" fill="#f59e0b"/>
                             </svg>
                         </div>
                     </div>
@@ -255,27 +289,27 @@
         <!-- Process Section -->
         <section class="process">
             <div class="container">
-                <h3 class="section-title">How Each Artwork is Created</h3>
+                <h3 class="section-title">Our Creative Process</h3>
                 <div class="process-steps">
                     <div class="step">
-                        <div class="step-number">1</div>
-                        <h4>Inspiration</h4>
-                        <p>Every piece starts with an idea from my imagination - maybe a dream, a feeling, or something beautiful I saw</p>
+                        <div class="step-number">01</div>
+                        <h4>Conceptualization</h4>
+                        <p>We start with a creative vision and explore how algorithms can bring it to life</p>
                     </div>
                     <div class="step">
-                        <div class="step-number">2</div>
-                        <h4>Sketching</h4>
-                        <p>I draw my ideas first, planning out the shapes and colors that will make the artwork special</p>
+                        <div class="step-number">02</div>
+                        <h4>Algorithm Design</h4>
+                        <p>Custom algorithms are developed to generate the desired artistic patterns</p>
                     </div>
                     <div class="step">
-                        <div class="step-number">3</div>
-                        <h4>Painting</h4>
-                        <p>With my favorite brushes and brightest colors, I bring the artwork to life with lots of love</p>
+                        <div class="step-number">03</div>
+                        <h4>Iteration & Refinement</h4>
+                        <p>Multiple iterations refine the output until the perfect balance is achieved</p>
                     </div>
                     <div class="step">
-                        <div class="step-number">4</div>
-                        <h4>Finishing</h4>
-                        <p>I add the final touches and make sure every detail is perfect before it's ready for you</p>
+                        <div class="step-number">04</div>
+                        <h4>Final Artwork</h4>
+                        <p>The completed piece is prepared for display or digital delivery</p>
                     </div>
                 </div>
             </div>
@@ -285,9 +319,9 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h3>Ready to Bring Some Color to Your Life?</h3>
-                    <p>Each piece of artwork is unique and made with love. Find the perfect piece to brighten your home and bring a smile to your face.</p>
-                    <a href="gallery.html" class="cta-button large">Shop the Gallery</a>
+                    <h3>Ready to Explore?</h3>
+                    <p>Discover our collection of unique algorithmic artworks and find the perfect piece for your space.</p>
+                    <a href="gallery.html" class="cta-button large">View Our Gallery</a>
                 </div>
             </div>
         </section>
@@ -296,25 +330,25 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>Artistic Dreams</h4>
-                <p>Creating beautiful artwork with love and imagination</p>
+                <h4>InkAndAlgo Studio</h4>
+                <p>Creating at the intersection of art and technology</p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>hello@artisticdreams.com</p>
+                <p>hello@inkandalgo.com</p>
                 <p>+1 (555) 123-4567</p>
             </div>
             <div class="footer-section">
-                <h4>Follow the Artist</h4>
+                <h4>Follow Us</h4>
                 <div class="social-links">
                     <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Pinterest">📌</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Artistic Dreams. All rights reserved.</p>
+            <p>&copy; 2025 InkAndAlgo LLC. All rights reserved.</p>
         </div>
     </footer>
 

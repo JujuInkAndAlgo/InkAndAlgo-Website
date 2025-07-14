@@ -9,19 +9,19 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for warm artistic color scheme */
+/* CSS Variables for futuristic color scheme */
 :root {
-    --primary-orange: #f59e0b;
-    --secondary-pink: #ec4899;
-    --accent-purple: #8b5cf6;
-    --warm-yellow: #fbbf24;
-    --soft-green: #10b981;
-    --bright-red: #ef4444;
-    --sky-blue: #3b82f6;
+    --primary-cyan: #00d4ff;
+    --secondary-purple: #7c3aed;
+    --accent-orange: #f59e0b;
+    --neon-blue: #3b82f6;
+    --electric-pink: #ec4899;
+    --cyber-green: #10b981;
+    --dark-space: #0f172a;
     --white: #ffffff;
-    --warm-cream: #fef3c7;
-    --soft-pink: #fce7f3;
-    --light-purple: #f3e8ff;
+    --space-gray: #1e293b;
+    --midnight-blue: #1e40af;
+    --cosmic-purple: #4c1d95;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
     --gray-300: #cbd5e1;
@@ -39,17 +39,17 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-orange: #f59e0b;
-        --secondary-pink: #ec4899;
-        --accent-purple: #8b5cf6;
-        --warm-yellow: #fbbf24;
-        --soft-green: #10b981;
-        --bright-red: #ef4444;
-        --sky-blue: #3b82f6;
+        --primary-cyan: #00d4ff;
+        --secondary-purple: #7c3aed;
+        --accent-orange: #f59e0b;
+        --neon-blue: #3b82f6;
+        --electric-pink: #ec4899;
+        --cyber-green: #10b981;
+        --dark-space: #0f172a;
         --white: #ffffff;
-        --warm-cream: #fef3c7;
-        --soft-pink: #fce7f3;
-        --light-purple: #f3e8ff;
+        --space-gray: #1e293b;
+        --midnight-blue: #1e40af;
+        --cosmic-purple: #4c1d95;
         --gray-100: #f1f5f9;
         --gray-200: #e2e8f0;
         --gray-300: #cbd5e1;
@@ -67,8 +67,8 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: var(--warm-cream);
-    color: var(--gray-800);
+    background: var(--dark-space);
+    color: var(--gray-100);
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
@@ -85,11 +85,11 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        -webkit-radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+        -webkit-radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
     background: 
-        radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -102,8 +102,8 @@ body::before {
 
 /* Header with clean design */
 header {
-    background: var(--white);
-    border-bottom: 1px solid var(--gray-200);
+    background: var(--space-gray);
+    border-bottom: 1px solid var(--gray-700);
     padding: 1.5rem;
     position: -webkit-sticky;
     position: sticky;
@@ -179,8 +179,8 @@ nav a {
 }
 
 nav a.active {
-    background: var(--primary-orange);
-    color: var(--white);
+    background: var(--primary-cyan);
+    color: var(--dark-space);
 }
 
 nav a:hover:not(.active) {
@@ -286,8 +286,8 @@ main {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--primary-orange);
-    color: var(--white);
+    background: var(--primary-cyan);
+    color: var(--dark-space);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -318,8 +318,8 @@ main {
 }
 
 .cta-button.secondary:hover {
-    border-color: var(--primary-orange);
-    color: var(--primary-orange);
+    border-color: var(--primary-cyan);
+    color: var(--primary-cyan);
 }
 
 /* Section titles */
