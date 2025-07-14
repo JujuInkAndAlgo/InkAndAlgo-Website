@@ -3,23 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - InkAndAlgo Studios</title>
+    <title>Art Gallery - [Daughter's Name] Original Artwork</title>
+    <meta name="description" content="Browse our collection of beautiful original artwork created with love and imagination. Each piece is unique and ready to brighten your home.">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
 <body>
     <header>
-        <h1>InkAndAlgo Galleries</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="gallery.html">Gallery</a>
-        </nav>
+        <div class="header-content">
+            <div class="logo-container">
+                <svg class="logo" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="brushGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Paint palette -->
+                    <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.9"/>
+                    <!-- Paint brush -->
+                    <path d="M15 15 L35 35 M35 35 L40 30 M35 35 L30 40" stroke="url(#brushGradient)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <!-- Paint splashes -->
+                    <circle cx="20" cy="20" r="3" fill="#fbbf24" opacity="0.8"/>
+                    <circle cx="30" cy="15" r="2" fill="#ec4899" opacity="0.8"/>
+                    <circle cx="35" cy="25" r="2.5" fill="#8b5cf6" opacity="0.8"/>
+                </svg>
+                <h1>Artistic Dreams</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section class="gallery-grid" id="gallery"></section>
+        <!-- Gallery Hero Section -->
+        <section class="gallery-hero">
+            <div class="container">
+                <div class="gallery-hero-content">
+                    <h2>Beautiful Artwork Collection</h2>
+                    <p>Explore our gallery of unique, handcrafted artwork created with love and imagination. Each piece tells its own special story and brings joy to any space.</p>
+                    <div class="gallery-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Original Pieces</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Categories</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Love & Joy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Filtering System -->
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="category-filter">Category</label>
+                        <select id="category-filter" class="futuristic-select">
+                            <option value="all">All Categories</option>
+                            <option value="animals">Animals & Nature</option>
+                            <option value="abstract">Abstract & Colors</option>
+                            <option value="flowers">Flowers & Gardens</option>
+                            <option value="fantasy">Fantasy & Dreams</option>
+                            <option value="custom">Custom Orders</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-filter">Sort By</label>
+                        <select id="sort-filter" class="futuristic-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="view-toggle">View</label>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                    <rect x="2" y="2" width="6" height="6"/>
+                                    <rect x="10" y="2" width="6" height="6"/>
+                                    <rect x="2" y="10" width="6" height="6"/>
+                                    <rect x="10" y="10" width="6" height="6"/>
+                                </svg>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                    <rect x="2" y="2" width="16" height="3"/>
+                                    <rect x="2" y="7" width="16" height="3"/>
+                                    <rect x="2" y="12" width="16" height="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                        </svg>
+                        <input type="text" id="search-input" placeholder="Search artwork..." class="futuristic-input">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-container">
+            <div class="container">
+                <div class="gallery-grid" id="gallery"></div>
+                <div class="gallery-loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading beautiful artwork...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery CTA -->
+        <section class="gallery-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h3>Ready to Bring Some Color to Your Home?</h3>
+                    <p>Each piece of artwork is unique and made with love. Find the perfect piece to brighten your space and bring a smile to your face.</p>
+                    <a href="#contact" class="cta-button large">Contact Us</a>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 InkAndAlgo LLC. All rights reserved.</p>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Artistic Dreams</h4>
+                <p>Creating beautiful artwork with love and imagination</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>hello@artisticdreams.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow the Artist</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Pinterest">📌</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Artistic Dreams. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Modal for artwork details -->
+    <div class="modal" id="artwork-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image"></div>
+                <div class="modal-info">
+                    <h3 class="modal-title"></h3>
+                    <p class="modal-description"></p>
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Category:</span>
+                            <span class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Created:</span>
+                            <span class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Price:</span>
+                            <span class="detail-value price"></span>
+                        </div>
+                    </div>
+                    <button class="cta-button modal-buy-btn">Purchase Artwork</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
