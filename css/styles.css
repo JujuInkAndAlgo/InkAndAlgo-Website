@@ -9,19 +9,22 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for futuristic color scheme */
+/* CSS Variables for vibrant futuristic color scheme */
 :root {
-    --primary-cyan: #00d4ff;
-    --secondary-purple: #7c3aed;
-    --accent-orange: #f59e0b;
-    --neon-blue: #3b82f6;
-    --electric-pink: #ec4899;
-    --cyber-green: #10b981;
-    --dark-space: #0f172a;
+    --primary-cyan: #00ffff;
+    --secondary-purple: #ff00ff;
+    --accent-orange: #ff6b35;
+    --neon-blue: #00bfff;
+    --electric-pink: #ff1493;
+    --cyber-green: #00ff7f;
+    --bright-yellow: #ffff00;
+    --hot-pink: #ff69b4;
+    --lime-green: #32cd32;
+    --bright-red: #ff4500;
+    --vibrant-purple: #8a2be2;
     --white: #ffffff;
-    --space-gray: #1e293b;
-    --midnight-blue: #1e40af;
-    --cosmic-purple: #4c1d95;
+    --light-bg: #f8f9fa;
+    --soft-gray: #e9ecef;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
     --gray-300: #cbd5e1;
@@ -39,17 +42,20 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-cyan: #00d4ff;
-        --secondary-purple: #7c3aed;
-        --accent-orange: #f59e0b;
-        --neon-blue: #3b82f6;
-        --electric-pink: #ec4899;
-        --cyber-green: #10b981;
-        --dark-space: #0f172a;
+        --primary-cyan: #00ffff;
+        --secondary-purple: #ff00ff;
+        --accent-orange: #ff6b35;
+        --neon-blue: #00bfff;
+        --electric-pink: #ff1493;
+        --cyber-green: #00ff7f;
+        --bright-yellow: #ffff00;
+        --hot-pink: #ff69b4;
+        --lime-green: #32cd32;
+        --bright-red: #ff4500;
+        --vibrant-purple: #8a2be2;
         --white: #ffffff;
-        --space-gray: #1e293b;
-        --midnight-blue: #1e40af;
-        --cosmic-purple: #4c1d95;
+        --light-bg: #f8f9fa;
+        --soft-gray: #e9ecef;
         --gray-100: #f1f5f9;
         --gray-200: #e2e8f0;
         --gray-300: #cbd5e1;
@@ -67,8 +73,8 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: var(--dark-space);
-    color: var(--gray-100);
+    background: var(--light-bg);
+    color: var(--gray-800);
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
@@ -76,7 +82,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Subtle background pattern */
+/* Vibrant background pattern */
 body::before {
     content: '';
     position: fixed;
@@ -85,11 +91,13 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        -webkit-radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+        -webkit-radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
     background: 
-        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -100,10 +108,10 @@ body::before {
     padding: 0 2rem;
 }
 
-/* Header with clean design */
+/* Header with vibrant design */
 header {
-    background: var(--space-gray);
-    border-bottom: 1px solid var(--gray-700);
+    background: var(--white);
+    border-bottom: 2px solid var(--primary-cyan);
     padding: 1.5rem;
     position: -webkit-sticky;
     position: sticky;
@@ -180,7 +188,7 @@ nav a {
 
 nav a.active {
     background: var(--primary-cyan);
-    color: var(--dark-space);
+    color: var(--white);
 }
 
 nav a:hover:not(.active) {
@@ -282,12 +290,12 @@ main {
     }
 }
 
-/* Call-to-action button with clean design */
+/* Call-to-action button with vibrant design */
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--primary-cyan);
-    color: var(--dark-space);
+    background: linear-gradient(135deg, var(--primary-cyan), var(--secondary-purple));
+    color: var(--white);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -318,8 +326,8 @@ main {
 }
 
 .cta-button.secondary:hover {
-    border-color: var(--primary-cyan);
-    color: var(--primary-cyan);
+    border-color: var(--secondary-purple);
+    color: var(--secondary-purple);
 }
 
 /* Section titles */

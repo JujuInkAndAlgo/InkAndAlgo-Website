@@ -15,13 +15,13 @@
                 <svg class="logo" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
                         </linearGradient>
                     </defs>
                     <!-- Futuristic circuit board -->
@@ -29,17 +29,17 @@
                     <!-- Circuit paths -->
                     <path d="M10 15 L25 15 L25 10 M25 10 L40 10 M10 25 L20 25 L20 20 M20 20 L35 20 M10 35 L30 35 L30 30 M30 30 L40 30" stroke="url(#circuitGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
                     <!-- Circuit nodes -->
-                    <circle cx="25" cy="15" r="3" fill="#00d4ff"/>
-                    <circle cx="20" cy="25" r="3" fill="#7c3aed"/>
-                    <circle cx="30" cy="35" r="3" fill="#f59e0b"/>
+                    <circle cx="25" cy="15" r="3" fill="#00ffff"/>
+                    <circle cx="20" cy="25" r="3" fill="#ff00ff"/>
+                    <circle cx="30" cy="35" r="3" fill="#ff6b35"/>
                     <!-- Data flow animation -->
-                    <circle cx="15" cy="15" r="1" fill="#00d4ff" opacity="0.8">
+                    <circle cx="15" cy="15" r="1" fill="#00ffff" opacity="0.8">
                         <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="35" cy="25" r="1" fill="#7c3aed" opacity="0.8">
+                    <circle cx="35" cy="25" r="1" fill="#ff00ff" opacity="0.8">
                         <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="25" cy="40" r="1" fill="#f59e0b" opacity="0.8">
+                    <circle cx="25" cy="40" r="1" fill="#ff6b35" opacity="0.8">
                         <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
                     </circle>
                 </svg>
@@ -61,12 +61,12 @@
                 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:rgba(0, 212, 255, 0.1);stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:rgba(124, 58, 237, 0.2);stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:rgba(0, 255, 255, 0.2);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(255, 0, 255, 0.3);stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:rgba(245, 158, 11, 0.1);stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:rgba(0, 212, 255, 0.2);stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:rgba(255, 107, 53, 0.2);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 255, 255, 0.3);stop-opacity:1" />
                         </linearGradient>
                         <filter id="glow">
                             <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -86,22 +86,22 @@
                         <g transform="translate(200, 150)">
                             <!-- AI Brain -->
                             <circle cx="0" cy="0" r="25" fill="url(#heroGradient2)" opacity="0.8"/>
-                            <circle cx="0" cy="0" r="20" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.6"/>
                             <!-- Neural network connections -->
-                            <path d="M-15 -15 Q0 -25 15 -15 Q25 0 15 15 Q0 25 -15 15 Q-25 0 -15 -15" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.7">
+                            <path d="M-15 -15 Q0 -25 15 -15 Q25 0 15 15 Q0 25 -15 15 Q-25 0 -15 -15" stroke="#ff00ff" stroke-width="1.5" fill="none" opacity="0.7">
                                 <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
                             </path>
                             <!-- Data nodes -->
-                            <circle cx="-10" cy="-10" r="3" fill="#00d4ff">
+                            <circle cx="-10" cy="-10" r="3" fill="#00ffff">
                                 <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
                             </circle>
-                            <circle cx="10" cy="-10" r="3" fill="#7c3aed">
+                            <circle cx="10" cy="-10" r="3" fill="#ff00ff">
                                 <animate attributeName="r" values="3;4;3" dur="2.5s" repeatCount="indefinite"/>
                             </circle>
-                            <circle cx="10" cy="10" r="3" fill="#f59e0b">
+                            <circle cx="10" cy="10" r="3" fill="#ff6b35">
                                 <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite"/>
                             </circle>
-                            <circle cx="-10" cy="10" r="3" fill="#00d4ff">
+                            <circle cx="-10" cy="10" r="3" fill="#00ffff">
                                 <animate attributeName="r" values="3;4;3" dur="1.5s" repeatCount="indefinite"/>
                             </circle>
                         </g>
