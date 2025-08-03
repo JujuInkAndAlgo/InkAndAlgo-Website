@@ -15,23 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const categories = ['generative', 'algorithmic', 'interactive'];
     const prices = [250, 350, 450, 550, 750, 950, 1200, 1500];
 
-    // Sample algorithmic artwork data
+    // Tech-Art Fusion artwork data
     const artworkData = [
-        { title: "Neural Network Symphony", category: "generative", description: "A dynamic generative artwork created through neural network algorithms, exploring the intersection of artificial intelligence and artistic expression." },
-        { title: "Quantum Fractal Patterns", category: "algorithmic", description: "Complex fractal patterns generated using quantum-inspired algorithms, creating infinite detail at every scale." },
-        { title: "Interactive Data Flow", category: "interactive", description: "An interactive digital experience that responds to user input, visualizing data streams in real-time." },
-        { title: "Algorithmic Harmony", category: "generative", description: "Generative art piece that creates harmonious visual patterns through mathematical algorithms and creative coding." },
-        { title: "Digital Evolution", category: "algorithmic", description: "An algorithmic artwork that evolves and adapts over time, showcasing the beauty of computational creativity." },
-        { title: "Virtual Reality Matrix", category: "interactive", description: "Interactive virtual reality experience that allows users to explore algorithmic art in immersive 3D space." },
-        { title: "Machine Learning Dreams", category: "generative", description: "Artwork generated through machine learning algorithms, creating dreamlike visual compositions." },
-        { title: "Computational Aesthetics", category: "algorithmic", description: "Algorithmic design that explores the mathematical foundations of beauty and visual harmony." },
-        { title: "Digital Consciousness", category: "interactive", description: "Interactive installation that simulates digital consciousness through responsive algorithmic art." },
-        { title: "Fractal Universe", category: "generative", description: "Generative fractal art that creates infinite universes within finite computational space." },
-        { title: "Algorithmic Poetry", category: "algorithmic", description: "Visual poetry created through algorithmic processes, where code becomes art." },
-        { title: "Neural Art Gallery", category: "interactive", description: "Interactive gallery where neural networks create and curate digital artworks in real-time." },
-        { title: "Quantum Art Generator", category: "generative", description: "Quantum-inspired generative art that explores the probabilistic nature of creativity." },
-        { title: "Digital DNA", category: "algorithmic", description: "Algorithmic artwork that visualizes digital genetic codes and evolutionary patterns." },
-        { title: "Virtual Sculpture Garden", category: "interactive", description: "Interactive 3D sculpture garden where users can create and manipulate algorithmic sculptures." }
+        { title: "Digital Brush Strokes", category: "generative", description: "A harmonious blend of traditional artistic techniques and digital algorithms, where brush strokes are generated through creative coding." },
+        { title: "Algorithmic Canvas", category: "algorithmic", description: "An artistic canvas where mathematical algorithms paint with the precision of technology and the soul of human creativity." },
+        { title: "Interactive Art Studio", category: "interactive", description: "A digital art studio where technology and creativity merge, allowing users to paint with algorithms and sculpt with code." },
+        { title: "Creative Code Symphony", category: "generative", description: "Where programming becomes poetry and algorithms dance with artistic expression in perfect harmony." },
+        { title: "Digital Artisan", category: "algorithmic", description: "Artwork that combines the craftsmanship of traditional art with the innovation of modern technology." },
+        { title: "Virtual Art Gallery", category: "interactive", description: "An immersive gallery where technology enhances artistic experience, creating new ways to interact with digital art." },
+        { title: "Code as Canvas", category: "generative", description: "Artwork where programming languages become paintbrushes and algorithms become the artist's palette." },
+        { title: "Tech-Art Harmony", category: "algorithmic", description: "A perfect fusion of technological precision and artistic intuition, creating beauty through the marriage of code and creativity." },
+        { title: "Digital Art Workshop", category: "interactive", description: "An interactive workshop where users can explore the intersection of technology and artistic expression." },
+        { title: "Algorithmic Masterpiece", category: "generative", description: "A masterpiece created where technology serves as the artist's assistant, enhancing human creativity with digital precision." },
+        { title: "Creative Computing", category: "algorithmic", description: "Artwork that demonstrates how computers can be creative partners, working alongside human artists to create something beautiful." },
+        { title: "Digital Art Lab", category: "interactive", description: "A laboratory where art and technology experiment together, pushing the boundaries of creative expression." },
+        { title: "Code Poetry", category: "generative", description: "Artwork where programming becomes a form of poetry, creating visual beauty through elegant code." },
+        { title: "Tech-Art Fusion", category: "algorithmic", description: "A seamless blend of technological innovation and artistic vision, where neither dominates but both enhance each other." },
+        { title: "Digital Creative Space", category: "interactive", description: "An interactive space where technology and art coexist, creating new possibilities for creative expression." }
     ];
 
     // Only create one item - the first image

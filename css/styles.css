@@ -9,65 +9,63 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for vibrant futuristic color scheme */
+/* CSS Variables for simple light color scheme */
 :root {
-    --primary-cyan: #00ffff;
-    --secondary-purple: #ff00ff;
-    --accent-orange: #ff6b35;
-    --neon-blue: #00bfff;
-    --electric-pink: #ff1493;
-    --cyber-green: #00ff7f;
-    --bright-yellow: #ffff00;
-    --hot-pink: #ff69b4;
-    --lime-green: #32cd32;
-    --bright-red: #ff4500;
-    --vibrant-purple: #8a2be2;
+    --primary-blue: #60a5fa;
+    --secondary-purple: #a78bfa;
+    --accent-pink: #f472b6;
+    --soft-cyan: #67e8f9;
+    --light-green: #86efac;
+    --warm-orange: #fdba74;
+    --soft-yellow: #fde047;
+    --light-pink: #f9a8d4;
+    --mint-green: #a7f3d0;
+    --lavender: #c4b5fd;
     --white: #ffffff;
-    --light-bg: #f8f9fa;
-    --soft-gray: #e9ecef;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --gray-900: #0f172a;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --light-bg: #fafafa;
+    --soft-gray: #f3f4f6;
+    --gray-100: #f9fafb;
+    --gray-200: #f3f4f6;
+    --gray-300: #e5e7eb;
+    --gray-400: #d1d5db;
+    --gray-500: #9ca3af;
+    --gray-600: #6b7280;
+    --gray-700: #4b5563;
+    --gray-800: #374151;
+    --gray-900: #111827;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-cyan: #00ffff;
-        --secondary-purple: #ff00ff;
-        --accent-orange: #ff6b35;
-        --neon-blue: #00bfff;
-        --electric-pink: #ff1493;
-        --cyber-green: #00ff7f;
-        --bright-yellow: #ffff00;
-        --hot-pink: #ff69b4;
-        --lime-green: #32cd32;
-        --bright-red: #ff4500;
-        --vibrant-purple: #8a2be2;
+        --primary-blue: #60a5fa;
+        --secondary-purple: #a78bfa;
+        --accent-pink: #f472b6;
+        --soft-cyan: #67e8f9;
+        --light-green: #86efac;
+        --warm-orange: #fdba74;
+        --soft-yellow: #fde047;
+        --light-pink: #f9a8d4;
+        --mint-green: #a7f3d0;
+        --lavender: #c4b5fd;
         --white: #ffffff;
-        --light-bg: #f8f9fa;
-        --soft-gray: #e9ecef;
-        --gray-100: #f1f5f9;
-        --gray-200: #e2e8f0;
-        --gray-300: #cbd5e1;
-        --gray-400: #94a3b8;
-        --gray-500: #64748b;
-        --gray-600: #475569;
-        --gray-700: #334155;
-        --gray-800: #1e293b;
-        --gray-900: #0f172a;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --light-bg: #fafafa;
+        --soft-gray: #f3f4f6;
+        --gray-100: #f9fafb;
+        --gray-200: #f3f4f6;
+        --gray-300: #e5e7eb;
+        --gray-400: #d1d5db;
+        --gray-500: #9ca3af;
+        --gray-600: #6b7280;
+        --gray-700: #4b5563;
+        --gray-800: #374151;
+        --gray-900: #111827;
+        --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -82,7 +80,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Vibrant background pattern */
+/* Simple light background pattern */
 body::before {
     content: '';
     position: fixed;
@@ -91,13 +89,11 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        -webkit-radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+        -webkit-radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.03) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.03) 0%, transparent 50%);
     background: 
-        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.03) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -108,10 +104,10 @@ body::before {
     padding: 0 2rem;
 }
 
-/* Header with vibrant design */
+/* Header with simple design */
 header {
     background: var(--white);
-    border-bottom: 2px solid var(--primary-cyan);
+    border-bottom: 1px solid var(--gray-200);
     padding: 1.5rem;
     position: -webkit-sticky;
     position: sticky;
@@ -187,7 +183,7 @@ nav a {
 }
 
 nav a.active {
-    background: var(--primary-cyan);
+    background: var(--primary-blue);
     color: var(--white);
 }
 
@@ -290,11 +286,11 @@ main {
     }
 }
 
-/* Call-to-action button with vibrant design */
+/* Call-to-action button with simple design */
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, var(--primary-cyan), var(--secondary-purple));
+    background: var(--primary-blue);
     color: var(--white);
     text-decoration: none;
     border-radius: 8px;
@@ -326,8 +322,8 @@ main {
 }
 
 .cta-button.secondary:hover {
-    border-color: var(--secondary-purple);
-    color: var(--secondary-purple);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
 }
 
 /* Section titles */
