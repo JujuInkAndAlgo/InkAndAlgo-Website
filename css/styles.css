@@ -9,29 +9,29 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for simple light color scheme */
+/* CSS Variables for warm color scheme */
 :root {
-    --primary-blue: #60a5fa;
-    --secondary-purple: #a78bfa;
-    --accent-pink: #f472b6;
-    --soft-cyan: #67e8f9;
-    --light-green: #86efac;
-    --warm-orange: #fdba74;
-    --soft-yellow: #fde047;
-    --light-pink: #f9a8d4;
-    --mint-green: #a7f3d0;
-    --lavender: #c4b5fd;
+    --primary-orange: #f59e0b;
+    --secondary-yellow: #fbbf24;
+    --accent-coral: #fb7185;
+    --warm-red: #f87171;
+    --soft-peach: #fecaca;
+    --warm-pink: #f9a8d4;
+    --golden-yellow: #fde047;
+    --warm-cream: #fef3c7;
+    --soft-apricot: #fed7aa;
+    --warm-salmon: #fca5a5;
     --white: #ffffff;
-    --light-bg: #fafafa;
-    --soft-gray: #f3f4f6;
+    --light-bg: #fefefe;
+    --soft-gray: #f8fafc;
     --gray-100: #f9fafb;
     --gray-200: #f3f4f6;
     --gray-300: #e5e7eb;
     --gray-400: #d1d5db;
-    --gray-500: #9ca3af;
-    --gray-600: #6b7280;
-    --gray-700: #4b5563;
-    --gray-800: #374151;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
     --gray-900: #111827;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -41,27 +41,27 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-blue: #60a5fa;
-        --secondary-purple: #a78bfa;
-        --accent-pink: #f472b6;
-        --soft-cyan: #67e8f9;
-        --light-green: #86efac;
-        --warm-orange: #fdba74;
-        --soft-yellow: #fde047;
-        --light-pink: #f9a8d4;
-        --mint-green: #a7f3d0;
-        --lavender: #c4b5fd;
+        --primary-orange: #f59e0b;
+        --secondary-yellow: #fbbf24;
+        --accent-coral: #fb7185;
+        --warm-red: #f87171;
+        --soft-peach: #fecaca;
+        --warm-pink: #f9a8d4;
+        --golden-yellow: #fde047;
+        --warm-cream: #fef3c7;
+        --soft-apricot: #fed7aa;
+        --warm-salmon: #fca5a5;
         --white: #ffffff;
-        --light-bg: #fafafa;
-        --soft-gray: #f3f4f6;
+        --light-bg: #fefefe;
+        --soft-gray: #f8fafc;
         --gray-100: #f9fafb;
         --gray-200: #f3f4f6;
         --gray-300: #e5e7eb;
         --gray-400: #d1d5db;
-        --gray-500: #9ca3af;
-        --gray-600: #6b7280;
-        --gray-700: #4b5563;
-        --gray-800: #374151;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
         --gray-900: #111827;
         --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -80,7 +80,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Simple light background pattern */
+/* Warm background pattern */
 body::before {
     content: '';
     position: fixed;
@@ -89,11 +89,11 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        -webkit-radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.03) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.03) 0%, transparent 50%);
+        -webkit-radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.03) 0%, transparent 50%);
     background: 
-        radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.03) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -183,7 +183,7 @@ nav a {
 }
 
 nav a.active {
-    background: var(--primary-blue);
+    background: var(--primary-orange);
     color: var(--white);
 }
 
@@ -290,7 +290,7 @@ main {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--primary-blue);
+    background: var(--primary-orange);
     color: var(--white);
     text-decoration: none;
     border-radius: 8px;
@@ -322,8 +322,8 @@ main {
 }
 
 .cta-button.secondary:hover {
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
 }
 
 /* Section titles */
