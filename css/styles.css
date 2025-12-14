@@ -9,26 +9,26 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for professional blue-gray color scheme */
+/* CSS Variables for professional black and white color scheme */
 :root {
-    --primary-color: #1e40af;
-    --secondary-color: #3b82f6;
-    --accent-color: #60a5fa;
-    --dark-accent: #1d4ed8;
-    --navy: #1e293b;
-    --slate: #64748b;
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #666666;
+    --dark-accent: #000000;
+    --navy: #000000;
+    --slate: #666666;
     --white: #ffffff;
-    --light-bg: #f8fafc;
-    --soft-gray: #f1f5f9;
-    --gray-100: #f8fafc;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --gray-900: #0f172a;
+    --light-bg: #f5f5f5;
+    --soft-gray: #e0e0e0;
+    --gray-100: #f5f5f5;
+    --gray-200: #e0e0e0;
+    --gray-300: #cccccc;
+    --gray-400: #999999;
+    --gray-500: #666666;
+    --gray-600: #333333;
+    --gray-700: #000000;
+    --gray-800: #000000;
+    --gray-900: #000000;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -37,24 +37,24 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-color: #1e40af;
-        --secondary-color: #3b82f6;
-        --accent-color: #60a5fa;
-        --dark-accent: #1d4ed8;
-        --navy: #1e293b;
-        --slate: #64748b;
+        --primary-color: #000000;
+        --secondary-color: #333333;
+        --accent-color: #666666;
+        --dark-accent: #000000;
+        --navy: #000000;
+        --slate: #666666;
         --white: #ffffff;
-        --light-bg: #f8fafc;
-        --soft-gray: #f1f5f9;
-        --gray-100: #f8fafc;
-        --gray-200: #e2e8f0;
-        --gray-300: #cbd5e1;
-        --gray-400: #94a3b8;
-        --gray-500: #64748b;
-        --gray-600: #475569;
-        --gray-700: #334155;
-        --gray-800: #1e293b;
-        --gray-900: #0f172a;
+        --light-bg: #f5f5f5;
+        --soft-gray: #e0e0e0;
+        --gray-100: #f5f5f5;
+        --gray-200: #e0e0e0;
+        --gray-300: #cccccc;
+        --gray-400: #999999;
+        --gray-500: #666666;
+        --gray-600: #333333;
+        --gray-700: #000000;
+        --gray-800: #000000;
+        --gray-900: #000000;
         --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -62,7 +62,7 @@
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     background: var(--light-bg);
     color: var(--gray-800);
     line-height: 1.6;
@@ -136,7 +136,7 @@ header {
 }
 
 header h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--gray-900);
@@ -1099,14 +1099,14 @@ footer {
     height: 50px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.2)) hue-rotate(220deg) saturate(1.2) brightness(1.1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .logo:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.3)) hue-rotate(220deg) saturate(1.3) brightness(1.2);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 /* Hero image styles */
@@ -1128,7 +1128,6 @@ footer {
     height: auto;
     border-radius: 16px;
     box-shadow: var(--shadow);
-    filter: hue-rotate(220deg) saturate(1.1) brightness(1.05);
 }
 
 .hero-image svg {

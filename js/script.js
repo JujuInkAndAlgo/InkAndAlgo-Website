@@ -37,18 +37,27 @@ document.addEventListener("DOMContentLoaded", function () {
         { title: "Digital Creative Space", category: "interactive", description: "An interactive space where technology and art coexist, creating new possibilities for creative expression." }
     ];
 
-    // Only create one item - the first image
-    const artwork = artworkData[0];
-    const price = prices[Math.floor(Math.random() * prices.length)];
-    
-    items.push({
-        type: 'image',
-        src: 'assets/images/image_001.jpg',
-        title: artwork.title,
-        category: artwork.category,
-        price: price,
-        description: artwork.description,
-        created: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
+    // Create items for all images
+    const imageSources = [
+        'assets/images/image_001.jpg',
+        'assets/images/PXL_20210515_195102835.PORTRAIT.jpg',
+        'assets/images/PXL_20210515_200025261.PORTRAIT.jpg',
+        'assets/images/PXL_20210515_201150112.PORTRAIT.jpg'
+    ];
+
+    imageSources.forEach((src, index) => {
+        const artwork = artworkData[index];
+        const price = prices[Math.floor(Math.random() * prices.length)];
+
+        items.push({
+            type: 'image',
+            src: src,
+            title: artwork.title,
+            category: artwork.category,
+            price: price,
+            description: artwork.description,
+            created: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
+        });
     });
 
     // Initialize filtered items
