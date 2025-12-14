@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Only run on gallery page
+    if (!document.getElementById("gallery")) return;
+
     const gallery = document.getElementById("gallery");
     const loading = document.getElementById("loading");
     const modal = document.getElementById("artwork-modal");
