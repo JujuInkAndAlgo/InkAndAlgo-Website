@@ -583,7 +583,7 @@ main {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-color);
 }
 
 .stat-label {
@@ -665,7 +665,7 @@ main {
 .step-number {
     width: 60px;
     height: 60px;
-    background: var(--primary-blue);
+    background: var(--primary-color);
     color: var(--white);
     border-radius: 50%;
     display: -webkit-box;
@@ -812,7 +812,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: var(--primary-blue);
+    background: var(--primary-color);
     -webkit-transform: translateY(-2px);
     -ms-transform: translateY(-2px);
     transform: translateY(-2px);
@@ -1127,7 +1127,7 @@ footer {
 
 /* Gallery Hero Section */
 .gallery-hero {
-    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--gray-800) 100%);
     color: var(--white);
     padding: 4rem 0;
     position: relative;
@@ -1158,7 +1158,7 @@ footer {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1189,7 +1189,7 @@ footer {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
@@ -1248,8 +1248,8 @@ footer {
 
 .futuristic-select:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
 }
 
 .view-toggle {
@@ -1269,8 +1269,8 @@ footer {
 
 .view-btn.active,
 .view-btn:hover {
-    border-color: var(--primary-blue);
-    background: var(--primary-blue);
+    border-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--white);
 }
 
@@ -1307,8 +1307,8 @@ footer {
 
 .futuristic-input:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
 }
 
 /* Gallery Container */
@@ -1393,8 +1393,8 @@ footer {
 .item-category {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: var(--light-blue);
-    color: var(--primary-blue);
+    background: var(--accent-color);
+    color: var(--primary-color);
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -1406,7 +1406,7 @@ footer {
 .item-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -1446,7 +1446,7 @@ footer {
     width: 40px;
     height: 40px;
     border: 4px solid var(--gray-200);
-    border-top: 4px solid var(--primary-blue);
+    border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
@@ -1459,7 +1459,7 @@ footer {
 
 /* Gallery CTA */
 .gallery-cta {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--white);
     padding: 4rem 0;
     text-align: center;
@@ -1601,7 +1601,7 @@ footer {
 
 .detail-value.price {
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-color);
     font-size: 1.2rem;
 }
 
