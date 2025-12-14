@@ -45,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
         'assets/images/PXL_20210515_201150112.PORTRAIT.jpg'
     ];
 
+    // Add more images from image_002.jpg to image_100.jpg
+    for (let i = 2; i <= 100; i++) {
+        imageSources.push(`assets/images/image_${i.toString().padStart(3, '0')}.jpg`);
+    }
+
     imageSources.forEach((src, index) => {
         const artwork = artworkData[index];
         const price = prices[Math.floor(Math.random() * prices.length)];
