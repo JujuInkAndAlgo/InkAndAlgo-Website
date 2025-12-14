@@ -467,22 +467,22 @@ main {
 }
 
 .feature-icon {
-    font-size: 3rem;
     margin-bottom: 1.5rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
 }
 
-.feature-icon img {
-    filter: hue-rotate(220deg) saturate(1.2) brightness(1.1);
+.feature-icon svg {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
-.feature-card:hover .feature-icon img {
+.feature-card:hover .feature-icon svg {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
-    filter: hue-rotate(220deg) saturate(1.3) brightness(1.2);
 }
 
 .feature-card h4 {
@@ -599,17 +599,25 @@ main {
     height: 400px;
 }
 
-.geometric-pattern {
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     width: 100%;
     height: 100%;
-    background:
-        -webkit-radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        -webkit-radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-    background:
-        radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+}
+
+.about-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
     border: 1px solid var(--gray-200);
+    transition: transform 0.3s ease;
+}
+
+.about-gallery img:hover {
+    transform: scale(1.05);
 }
 
 /* Process section */
