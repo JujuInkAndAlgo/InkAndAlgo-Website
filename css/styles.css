@@ -9,16 +9,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for cool professional color scheme */
+/* CSS Variables for blue and purple only color scheme */
 :root {
     --primary-blue: #2563eb;
     --secondary-blue: #3b82f6;
-    --accent-teal: #06b6d4;
+    --light-blue: #60a5fa;
     --deep-purple: #7c3aed;
     --light-purple: #a78bfa;
-    --soft-cyan: #67e8f9;
-    --cool-gray: #e2e8f0;
-    --tech-green: #10b981;
+    --dark-purple: #5b21b6;
     --navy: #1e293b;
     --slate: #64748b;
     --white: #ffffff;
@@ -41,28 +39,26 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-orange: #f59e0b;
-        --secondary-yellow: #fbbf24;
-        --accent-coral: #fb7185;
-        --warm-red: #f87171;
-        --soft-peach: #fecaca;
-        --warm-pink: #f9a8d4;
-        --golden-yellow: #fde047;
-        --warm-cream: #fef3c7;
-        --soft-apricot: #fed7aa;
-        --warm-salmon: #fca5a5;
+        --primary-blue: #2563eb;
+        --secondary-blue: #3b82f6;
+        --light-blue: #60a5fa;
+        --deep-purple: #7c3aed;
+        --light-purple: #a78bfa;
+        --dark-purple: #5b21b6;
+        --navy: #1e293b;
+        --slate: #64748b;
         --white: #ffffff;
-        --light-bg: #fefefe;
-        --soft-gray: #f8fafc;
-        --gray-100: #f9fafb;
-        --gray-200: #f3f4f6;
-        --gray-300: #e5e7eb;
-        --gray-400: #d1d5db;
-        --gray-500: #6b7280;
-        --gray-600: #4b5563;
-        --gray-700: #374151;
-        --gray-800: #1f2937;
-        --gray-900: #111827;
+        --light-bg: #f8fafc;
+        --soft-gray: #f1f5f9;
+        --gray-100: #f8fafc;
+        --gray-200: #e2e8f0;
+        --gray-300: #cbd5e1;
+        --gray-400: #94a3b8;
+        --gray-500: #64748b;
+        --gray-600: #475569;
+        --gray-700: #334155;
+        --gray-800: #1e293b;
+        --gray-900: #0f172a;
         --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
