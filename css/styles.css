@@ -418,7 +418,7 @@ main {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--primary-blue);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
