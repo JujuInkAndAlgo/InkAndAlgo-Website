@@ -100,7 +100,7 @@ body::before {
 header {
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
