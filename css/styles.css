@@ -9,14 +9,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables for blue and purple only color scheme */
+/* CSS Variables for professional blue-gray color scheme */
 :root {
-    --primary-blue: #2563eb;
-    --secondary-blue: #3b82f6;
-    --light-blue: #60a5fa;
-    --deep-purple: #7c3aed;
-    --light-purple: #a78bfa;
-    --dark-purple: #5b21b6;
+    --primary-color: #1e40af;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --dark-accent: #1d4ed8;
     --navy: #1e293b;
     --slate: #64748b;
     --white: #ffffff;
@@ -39,12 +37,10 @@
 /* Fallback for older browsers that don't support CSS variables */
 @supports not (--custom: property) {
     :root {
-        --primary-blue: #2563eb;
-        --secondary-blue: #3b82f6;
-        --light-blue: #60a5fa;
-        --deep-purple: #7c3aed;
-        --light-purple: #a78bfa;
-        --dark-purple: #5b21b6;
+        --primary-color: #1e40af;
+        --secondary-color: #3b82f6;
+        --accent-color: #60a5fa;
+        --dark-accent: #1d4ed8;
         --navy: #1e293b;
         --slate: #64748b;
         --white: #ffffff;
@@ -85,10 +81,10 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        -webkit-radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        -webkit-radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
         -webkit-radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
     background:
-        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
     z-index: -1;
 }
@@ -145,7 +141,7 @@ header h1 {
     font-weight: 700;
     color: var(--gray-900);
     letter-spacing: -0.025em;
-    background: linear-gradient(135deg, var(--primary-blue), var(--deep-purple));
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,7 +179,7 @@ nav a {
 }
 
 nav a.active {
-    background: var(--primary-blue);
+    background: var(--primary-color);
     color: var(--white);
 }
 
@@ -290,7 +286,7 @@ main {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--primary-blue);
+    background: var(--primary-color);
     color: var(--white);
     text-decoration: none;
     border-radius: 8px;
@@ -332,7 +328,7 @@ main {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, var(--primary-blue), var(--deep-purple));
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
