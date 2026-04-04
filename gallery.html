@@ -16,12 +16,21 @@
             </a>
             <nav>
                 <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
                 <a href="gallery.html" class="active">Spring Gallery</a>
                 <a href="index.html#about">About</a>
                 <a href="index.html#contact">Contact</a>
             </nav>
         </div>
     </header>
+
+    <div class="site-links">
+        <a class="site-link-pill" href="index.html">Home</a>
+        <a class="site-link-pill" href="index.html#services">Services</a>
+        <a class="site-link-pill" href="gallery.html">Gallery</a>
+        <a class="site-link-pill" href="index.html#about">About</a>
+        <a class="site-link-pill" href="index.html#contact">Contact</a>
+    </div>
 
     <main>
         <section class="gallery-hero">
@@ -88,9 +97,42 @@
             </div>
         </section>
 
-        <section class="gallery-container">
+        <section class="journeys">
             <div class="container">
-                <div class="gallery-grid" id="gallery"></div>
+                <h3 class="section-title">Common Paths</h3>
+                <p class="section-intro">The portfolio uses the same navigation anchors as the home page so users can move from browsing to inquiry without losing context.</p>
+                <div class="journey-grid">
+                    <div class="journey-card">
+                        <h4>See the work, then ask</h4>
+                        <p>Use the filterable gallery to find a direction you like, then jump straight to the contact section on the home page.</p>
+                        <div class="journey-links">
+                            <a href="#gallery">Browse Pieces</a>
+                            <a href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h4>Understand the offer</h4>
+                        <p>If you need scope before you inquire, the shared services link takes you back to the same section used across the site.</p>
+                        <div class="journey-links">
+                            <a href="index.html#services">View Services</a>
+                            <a href="index.html#about">About</a>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h4>Stay anchored</h4>
+                        <p>The top nav, link pills, and footer links now mirror each other so every page exposes the same destinations.</p>
+                        <div class="journey-links">
+                            <a href="index.html">Go Home</a>
+                            <a href="index.html#contact">Start A Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-container" id="gallery">
+            <div class="container">
+                <div class="gallery-grid" id="gallery-grid"></div>
                 <div class="gallery-loading" id="loading">
                     <div class="loading-spinner"></div>
                     <p>Gathering the spring collection...</p>
@@ -105,6 +147,10 @@
                 <a href="index.html#contact" class="cta-button">Contact The Studio</a>
             </div>
         </section>
+
+        <div class="consistency-note">
+            This page now uses the same core destinations as the home page: Home, Services, Gallery, About, and Contact.
+        </div>
     </main>
 
     <footer id="contact">
@@ -117,6 +163,7 @@
                 <h4>Contact</h4>
                 <p>hello@inkandalgo.com</p>
                 <p>+1 (555) 123-4567</p>
+                <p><a href="index.html#services">Review services</a></p>
             </div>
             <div class="footer-section">
                 <h4>Follow</h4>
