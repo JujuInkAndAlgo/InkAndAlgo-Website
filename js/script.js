@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Moon Garden Notes",
             category: "nightscape",
-            description: "Soft lunar light, sketched petals, and a quiet spring-night composition.",
+            description: "Soft lunar light, sketched detail, and a calm atmospheric composition.",
             src: "assets/images/image_001.jpg",
             price: 420,
             created: new Date(2026, 2, 20)
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Evening Bloom",
             category: "nightscape",
-            description: "A darker spring scene with fine-line details and calm atmospheric light.",
+            description: "A darker scene with fine-line details and calm atmospheric light.",
             src: "assets/images/PXL_20210515_201150112.PORTRAIT.jpg",
             price: 440,
             created: new Date(2026, 3, 1)
@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "Bloom Sequence"
     ];
     const descriptionCycle = {
-        botanical: "A spring botanical built with soft foliage, organic texture, and a collected studio feel.",
-        editorial: "An editorial-style composition shaped around whitespace, arrangement, and seasonal color.",
-        nightscape: "A moonlit spring study balancing dark skies, calm light, and hand-drawn detail."
+        botanical: "A botanical study built with soft foliage, organic texture, and a collected studio feel.",
+        editorial: "An editorial-style composition shaped around whitespace, arrangement, and controlled color.",
+        nightscape: "A moonlit study balancing dark skies, calm light, and hand-drawn detail."
     };
 
     const imagePool = [
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (filteredItems.length === 0) {
             gallery.innerHTML = [
                 "<div class=\"no-results\">",
-                "<h3>No spring pieces found</h3>",
+                "<h3>No pieces found</h3>",
                 "<p>Try a different search term or collection filter.</p>",
                 "</div>"
             ].join("");
