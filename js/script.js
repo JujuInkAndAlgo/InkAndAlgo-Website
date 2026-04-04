@@ -2,21 +2,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const counterElement = document.getElementById("view-counter");
     const namespace = "inkandalgo-website";
     const pathKey = window.location.pathname === "/" ? "home" : window.location.pathname.replace(/[^a-z0-9]/gi, "-").toLowerCase();
+    const localCounterKey = "inkandalgo-local-views-" + pathKey;
 
     if (counterElement) {
+        const localValue = Number(window.localStorage.getItem(localCounterKey) || "0") + 1;
+        window.localStorage.setItem(localCounterKey, String(localValue));
+
         fetch("https://api.countapi.xyz/hit/" + namespace + "/" + pathKey)
             .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Counter request failed");
+                }
                 return response.json();
             })
             .then(function (data) {
                 if (typeof data.value === "number") {
                     counterElement.textContent = "Views: " + data.value.toLocaleString();
                 } else {
-                    counterElement.textContent = "Views unavailable";
+                    counterElement.textContent = "Views: " + localValue.toLocaleString();
                 }
             })
             .catch(function () {
-                counterElement.textContent = "Views unavailable";
+                counterElement.textContent = "Views: " + localValue.toLocaleString();
             });
     }
 
