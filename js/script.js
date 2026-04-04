@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Only run on gallery page
-    if (!document.getElementById("gallery")) return;
-
     const gallery = document.getElementById("gallery");
+
+    if (!gallery) {
+        return;
+    }
+
     const loading = document.getElementById("loading");
     const modal = document.getElementById("artwork-modal");
     const modalClose = document.querySelector(".modal-close");
@@ -10,229 +12,248 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryFilter = document.getElementById("category-filter");
     const sortFilter = document.getElementById("sort-filter");
     const viewButtons = document.querySelectorAll(".view-btn");
-    
-    let items = [];
-    let filteredItems = [];
 
-    // Futuristic algorithmic categories
-    const categories = ['generative', 'algorithmic', 'interactive'];
-    const prices = [250, 350, 450, 550, 750, 950, 1200, 1500];
-
-    // Tech-Art Fusion artwork data
     const artworkData = [
-        { title: "Digital Brush Strokes", category: "generative", description: "A harmonious blend of traditional artistic techniques and digital algorithms, where brush strokes are generated through creative coding." },
-        { title: "Algorithmic Canvas", category: "algorithmic", description: "An artistic canvas where mathematical algorithms paint with the precision of technology and the soul of human creativity." },
-        { title: "Interactive Art Studio", category: "interactive", description: "A digital art studio where technology and creativity merge, allowing users to paint with algorithms and sculpt with code." },
-        { title: "Creative Code Symphony", category: "generative", description: "Where programming becomes poetry and algorithms dance with artistic expression in perfect harmony." },
-        { title: "Digital Artisan", category: "algorithmic", description: "Artwork that combines the craftsmanship of traditional art with the innovation of modern technology." },
-        { title: "Virtual Art Gallery", category: "interactive", description: "An immersive gallery where technology enhances artistic experience, creating new ways to interact with digital art." },
-        { title: "Code as Canvas", category: "generative", description: "Artwork where programming languages become paintbrushes and algorithms become the artist's palette." },
-        { title: "Tech-Art Harmony", category: "algorithmic", description: "A perfect fusion of technological precision and artistic intuition, creating beauty through the marriage of code and creativity." },
-        { title: "Digital Art Workshop", category: "interactive", description: "An interactive workshop where users can explore the intersection of technology and artistic expression." },
-        { title: "Algorithmic Masterpiece", category: "generative", description: "A masterpiece created where technology serves as the artist's assistant, enhancing human creativity with digital precision." },
-        { title: "Creative Computing", category: "algorithmic", description: "Artwork that demonstrates how computers can be creative partners, working alongside human artists to create something beautiful." },
-        { title: "Digital Art Lab", category: "interactive", description: "A laboratory where art and technology experiment together, pushing the boundaries of creative expression." },
-        { title: "Code Poetry", category: "generative", description: "Artwork where programming becomes a form of poetry, creating visual beauty through elegant code." },
-        { title: "Tech-Art Fusion", category: "algorithmic", description: "A seamless blend of technological innovation and artistic vision, where neither dominates but both enhance each other." },
-        { title: "Digital Creative Space", category: "interactive", description: "An interactive space where technology and art coexist, creating new possibilities for creative expression." }
+        {
+            title: "Moon Garden Notes",
+            category: "nightscape",
+            description: "Soft lunar light, sketched petals, and a quiet spring-night composition.",
+            src: "assets/images/image_001.jpg",
+            price: 420,
+            created: new Date(2026, 2, 20)
+        },
+        {
+            title: "Greenhouse Study",
+            category: "botanical",
+            description: "A layered botanical portrait with muted greens and warm natural contrast.",
+            src: "assets/images/PXL_20210515_195102835.PORTRAIT.jpg",
+            price: 360,
+            created: new Date(2026, 2, 24)
+        },
+        {
+            title: "Petal Index",
+            category: "editorial",
+            description: "A print-inspired composition built around negative space and blush accents.",
+            src: "assets/images/PXL_20210515_200025261.PORTRAIT.jpg",
+            price: 390,
+            created: new Date(2026, 2, 28)
+        },
+        {
+            title: "Evening Bloom",
+            category: "nightscape",
+            description: "A darker spring scene with fine-line details and calm atmospheric light.",
+            src: "assets/images/PXL_20210515_201150112.PORTRAIT.jpg",
+            price: 440,
+            created: new Date(2026, 3, 1)
+        }
     ];
 
-    // Create items for all images
-    const imageSources = [
-        'assets/images/image_001.jpg',
-        'assets/images/PXL_20210515_195102835.PORTRAIT.jpg',
-        'assets/images/PXL_20210515_200025261.PORTRAIT.jpg',
-        'assets/images/PXL_20210515_201150112.PORTRAIT.jpg'
+    const categoryCycle = ["botanical", "editorial", "nightscape"];
+    const titleCycle = [
+        "Garden Margin",
+        "Veranda Light",
+        "Wildflower Draft",
+        "Soft Weather Study",
+        "Florals After Rain",
+        "Editorial Stem",
+        "Morning Trellis",
+        "Paper Petals",
+        "Dusky Orchard",
+        "Windowbox Notes",
+        "Bloom Sequence"
+    ];
+    const descriptionCycle = {
+        botanical: "A spring botanical built with soft foliage, organic texture, and a collected studio feel.",
+        editorial: "An editorial-style composition shaped around whitespace, arrangement, and seasonal color.",
+        nightscape: "A moonlit spring study balancing dark skies, calm light, and hand-drawn detail."
+    };
+
+    const imagePool = [
+        "assets/images/image_001.jpg",
+        "assets/images/PXL_20210515_195102835.PORTRAIT.jpg",
+        "assets/images/PXL_20210515_200025261.PORTRAIT.jpg",
+        "assets/images/PXL_20210515_201150112.PORTRAIT.jpg"
     ];
 
-    // Add more images from image_002.jpg to image_100.jpg
-    for (let i = 2; i <= 100; i++) {
-        imageSources.push(`assets/images/image_${i.toString().padStart(3, '0')}.jpg`);
+    for (let i = 0; i < 11; i += 1) {
+        const category = categoryCycle[i % categoryCycle.length];
+        artworkData.push({
+            title: titleCycle[i],
+            category: category,
+            description: descriptionCycle[category],
+            src: imagePool[i % imagePool.length],
+            price: 320 + i * 25,
+            created: new Date(2026, 2 + (i % 2), 2 + i)
+        });
     }
 
-    imageSources.forEach((src, index) => {
-        const artwork = artworkData[index];
-        const price = prices[Math.floor(Math.random() * prices.length)];
+    let filteredItems = [...artworkData];
 
-        items.push({
-            type: 'image',
-            src: src,
-            title: artwork.title,
-            category: artwork.category,
-            price: price,
-            description: artwork.description,
-            created: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
-        });
-    });
-
-    // Initialize filtered items
-    filteredItems = [...items];
-
-    // Render gallery
     function renderGallery() {
-        gallery.innerHTML = '';
-        
+        gallery.innerHTML = "";
+
         if (filteredItems.length === 0) {
-            gallery.innerHTML = `
-                <div class="no-results">
-                    <h3>No artworks found</h3>
-                    <p>Try adjusting your search or filter criteria.</p>
-                </div>
-            `;
+            gallery.innerHTML = [
+                "<div class=\"no-results\">",
+                "<h3>No spring pieces found</h3>",
+                "<p>Try a different search term or collection filter.</p>",
+                "</div>"
+            ].join("");
             return;
         }
 
-        filteredItems.forEach((item, index) => {
-            const div = document.createElement('div');
-            div.className = 'item';
-            div.setAttribute('data-index', index);
+        filteredItems.forEach(function (item, index) {
+            const div = document.createElement("div");
+            div.className = "item";
+            div.setAttribute("data-index", String(index));
+            div.innerHTML = [
+                "<img src=\"" + item.src + "\" alt=\"" + item.title + "\">",
+                "<div class=\"item-info\">",
+                "<span class=\"item-category\">" + item.category + "</span>",
+                "<h3>" + item.title + "</h3>",
+                "<p>" + item.description + "</p>",
+                "<div class=\"item-price\">$" + item.price.toLocaleString() + "</div>",
+                "<div class=\"item-actions\">",
+                "<button class=\"cta-button view-details-btn\" type=\"button\">View Details</button>",
+                "<button class=\"cta-button buy-button\" type=\"button\">Inquire</button>",
+                "</div>",
+                "</div>"
+            ].join("");
 
-            const mediaElement = item.type === 'image' 
-                ? `<img src="${item.src}" alt="${item.title}" onerror="this.style.display='none'">`
-                : `<video src="${item.src}" controls></video>`;
+            div.querySelector(".view-details-btn").addEventListener("click", function () {
+                viewArtworkDetails(index);
+            });
 
-            div.innerHTML = `
-                ${mediaElement}
-                <div class="item-info">
-                    <span class="item-category">${item.category}</span>
-                    <h3>${item.title}</h3>
-                    <div class="item-price">$${item.price.toLocaleString()}</div>
-                    <div class="item-actions">
-                        <button class="cta-button view-details-btn" onclick="viewArtworkDetails(${index})">View Details</button>
-                        <button class="cta-button buy-button" onclick="purchaseArtwork(${index})">Buy Now</button>
-                    </div>
-                </div>
-            `;
+            div.querySelector(".buy-button").addEventListener("click", function () {
+                purchaseArtwork(index);
+            });
 
             gallery.appendChild(div);
         });
     }
 
-    // Filter and search functionality
     function filterItems() {
         const searchTerm = searchInput.value.toLowerCase();
         const categoryValue = categoryFilter.value;
         const sortValue = sortFilter.value;
 
-        filteredItems = items.filter(item => {
-            const matchesSearch = item.title.toLowerCase().includes(searchTerm) || 
-                                item.category.toLowerCase().includes(searchTerm) ||
-                                item.description.toLowerCase().includes(searchTerm);
-            const matchesCategory = categoryValue === 'all' || item.category === categoryValue;
+        filteredItems = artworkData.filter(function (item) {
+            const matchesSearch =
+                item.title.toLowerCase().includes(searchTerm) ||
+                item.category.toLowerCase().includes(searchTerm) ||
+                item.description.toLowerCase().includes(searchTerm);
+            const matchesCategory = categoryValue === "all" || item.category === categoryValue;
             return matchesSearch && matchesCategory;
         });
 
-        // Sort items
         switch (sortValue) {
-            case 'newest':
-                filteredItems.sort((a, b) => b.created - a.created);
+            case "newest":
+                filteredItems.sort(function (a, b) {
+                    return b.created - a.created;
+                });
                 break;
-            case 'oldest':
-                filteredItems.sort((a, b) => a.created - b.created);
+            case "oldest":
+                filteredItems.sort(function (a, b) {
+                    return a.created - b.created;
+                });
                 break;
-            case 'popular':
-                // Mock popularity based on price (higher price = more popular)
-                filteredItems.sort((a, b) => b.price - a.price);
+            case "popular":
+                filteredItems.sort(function (a, b) {
+                    return a.title.localeCompare(b.title);
+                });
                 break;
-            case 'price':
-                filteredItems.sort((a, b) => a.price - b.price);
+            case "price":
+                filteredItems.sort(function (a, b) {
+                    return a.price - b.price;
+                });
+                break;
+            default:
                 break;
         }
 
         renderGallery();
     }
 
-    // View toggle functionality
-    function toggleView(viewType) {
-        viewButtons.forEach(btn => btn.classList.remove('active'));
-        event.target.closest('.view-btn').classList.add('active');
-        
-        gallery.className = viewType === 'list' ? 'gallery-grid list-view' : 'gallery-grid';
-        renderGallery();
+    function toggleView(button, viewType) {
+        viewButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+        });
+        button.classList.add("active");
+        gallery.className = viewType === "list" ? "gallery-grid list-view" : "gallery-grid";
     }
 
-    // Modal functionality
-    window.viewArtworkDetails = function(index) {
+    function viewArtworkDetails(index) {
         const item = filteredItems[index];
-        const modalTitle = modal.querySelector('.modal-title');
-        const modalDescription = modal.querySelector('.modal-description');
-        const modalImage = modal.querySelector('.modal-image');
-        const modalCategory = modal.querySelector('.detail-item:nth-child(1) .detail-value');
-        const modalCreated = modal.querySelector('.detail-item:nth-child(2) .detail-value');
-        const modalPrice = modal.querySelector('.detail-item:nth-child(3) .detail-value');
+        const modalTitle = modal.querySelector(".modal-title");
+        const modalDescription = modal.querySelector(".modal-description");
+        const modalImage = modal.querySelector(".modal-image");
+        const modalCategory = modal.querySelector(".detail-item:nth-child(1) .detail-value");
+        const modalCreated = modal.querySelector(".detail-item:nth-child(2) .detail-value");
+        const modalPrice = modal.querySelector(".detail-item:nth-child(3) .detail-value");
+        const modalBuyButton = modal.querySelector(".modal-buy-btn");
 
         modalTitle.textContent = item.title;
         modalDescription.textContent = item.description;
-        modalCategory.textContent = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        modalCreated.textContent = item.created.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+        modalCategory.textContent = item.category;
+        modalCreated.textContent = item.created.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
         });
-        modalPrice.textContent = `$${item.price.toLocaleString()}`;
+        modalPrice.textContent = "$" + item.price.toLocaleString();
+        modalImage.innerHTML = "<img src=\"" + item.src + "\" alt=\"" + item.title + "\">";
+        modalBuyButton.onclick = function () {
+            purchaseArtwork(index);
+        };
 
-        modalImage.innerHTML = item.type === 'image' 
-            ? `<img src="${item.src}" alt="${item.title}">`
-            : `<video src="${item.src}" controls></video>`;
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
 
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    };
-
-    window.purchaseArtwork = function(index) {
+    function purchaseArtwork(index) {
         const item = filteredItems[index];
-        alert(`Purchase functionality for "${item.title}" - Price: $${item.price.toLocaleString()}\n\nThis would integrate with your payment system.`);
-    };
+        window.alert(
+            "Inquiry for \"" +
+            item.title +
+            "\"\nCollection: " +
+            item.category +
+            "\nPrice: $" +
+            item.price.toLocaleString() +
+            "\n\nHook this button into your real contact or checkout flow."
+        );
+    }
 
-    // Close modal
-    modalClose.onclick = function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    };
+    searchInput.addEventListener("input", filterItems);
+    categoryFilter.addEventListener("change", filterItems);
+    sortFilter.addEventListener("change", filterItems);
 
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    };
-
-    // Event listeners
-    searchInput.addEventListener('input', filterItems);
-    categoryFilter.addEventListener('change', filterItems);
-    sortFilter.addEventListener('change', filterItems);
-    
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            toggleView(this.getAttribute('data-view'));
+    viewButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            toggleView(btn, btn.getAttribute("data-view"));
         });
     });
 
-    // Loading simulation
-    setTimeout(() => {
-        loading.style.display = 'none';
+    modalClose.onclick = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+    };
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        }
+    });
+
+    setTimeout(function () {
+        loading.style.display = "none";
         renderGallery();
-    }, 1500);
-
-    // Add some interactive effects
-    gallery.addEventListener('mouseover', function(e) {
-        if (e.target.closest('.item')) {
-            e.target.closest('.item').style.transform = 'translateY(-8px) scale(1.02)';
-        }
-    });
-
-    gallery.addEventListener('mouseout', function(e) {
-        if (e.target.closest('.item')) {
-            e.target.closest('.item').style.transform = 'translateY(0) scale(1)';
-        }
-    });
-
-    // Keyboard navigation for modal
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
+    }, 500);
 });

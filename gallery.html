@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - InkAndAlgo Studios</title>
-    <meta name="description" content="Explore our professional portfolio of algorithmic artworks and digital art projects.">
+    <title>Spring Gallery | InkAndAlgo Studio</title>
+    <meta name="description" content="Browse InkAndAlgo Studio's spring gallery of editorial, botanical, and evening-light inspired digital art.">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="logo-container">
-                <img src="assets/WebsiteLogos/logo_icon_64px.png" alt="InkAndAlgo Studio Logo" class="logo">
+            <a class="logo-container" href="index.html">
+                <img src="assets/WebsiteLogos/logo_small_150px.png" alt="InkAndAlgo Studio logo" class="logo">
                 <h1>InkAndAlgo Studio</h1>
-            </div>
+            </a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="gallery.html" class="active">Portfolio</a>
+                <a href="gallery.html" class="active">Spring Gallery</a>
                 <a href="index.html#about">About</a>
                 <a href="index.html#contact">Contact</a>
             </nav>
@@ -25,103 +24,85 @@
     </header>
 
     <main>
-        <!-- Gallery Hero Section -->
         <section class="gallery-hero">
-            <div class="container">
-                <div class="gallery-hero-content">
-                    <h2>Our Portfolio</h2>
-                    <p>Showcase of our professional digital art projects and algorithmic masterpieces created for clients worldwide.</p>
-                    <div class="gallery-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">100+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Service Types</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
+            <div class="gallery-hero-content">
+                <span class="eyebrow">Curated Portfolio</span>
+                <h2>Spring work in bloom.</h2>
+                <p>Browse a smaller, more intentional collection of moonlit florals, editorial compositions, and soft interactive concepts.</p>
+                <div class="gallery-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Featured pieces</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Collection themes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Seasonal system</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Advanced Filtering System -->
         <section class="gallery-filters">
             <div class="container">
-                <div class="filter-controls">
-                    <div class="filter-group">
-                        <label for="category-filter">Category</label>
-                        <select id="category-filter" class="futuristic-select">
-                            <option value="all">All Categories</option>
-                            <option value="generative">Generative Art</option>
-                            <option value="algorithmic">Algorithmic Design</option>
-                            <option value="interactive">Interactive</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="sort-filter">Sort By</label>
-                        <select id="sort-filter" class="futuristic-select">
-                            <option value="newest">Newest First</option>
-                            <option value="oldest">Oldest First</option>
-                            <option value="popular">Most Popular</option>
-                            <option value="price">Price</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="view-toggle">View</label>
-                        <div class="view-toggle">
-                            <button class="view-btn active" data-view="grid">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <rect x="2" y="2" width="6" height="6"/>
-                                    <rect x="10" y="2" width="6" height="6"/>
-                                    <rect x="2" y="10" width="6" height="6"/>
-                                    <rect x="10" y="10" width="6" height="6"/>
-                                </svg>
-                            </button>
-                            <button class="view-btn" data-view="list">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <rect x="2" y="2" width="16" height="3"/>
-                                    <rect x="2" y="7" width="16" height="3"/>
-                                    <rect x="2" y="12" width="16" height="3"/>
-                                </svg>
-                            </button>
+                <div class="filter-shell">
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="category-filter">Collection</label>
+                            <select id="category-filter" class="futuristic-select">
+                                <option value="all">All Pieces</option>
+                                <option value="botanical">Botanical</option>
+                                <option value="editorial">Editorial</option>
+                                <option value="nightscape">Nightscape</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-filter">Sort</label>
+                            <select id="sort-filter" class="futuristic-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="popular">Featured</option>
+                                <option value="price">Price</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="view-toggle">View</label>
+                            <div class="view-toggle" id="view-toggle">
+                                <button class="view-btn active" data-view="grid" type="button">Grid</button>
+                                <button class="view-btn" data-view="list" type="button">List</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="search-container">
-                    <div class="search-box">
-                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
-                        </svg>
-                        <input type="text" id="search-input" placeholder="Search artworks..." class="futuristic-input">
+                    <div class="search-container">
+                        <div class="search-box">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                            </svg>
+                            <input type="text" id="search-input" placeholder="Search spring pieces..." class="futuristic-input">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Grid -->
         <section class="gallery-container">
             <div class="container">
                 <div class="gallery-grid" id="gallery"></div>
                 <div class="gallery-loading" id="loading">
                     <div class="loading-spinner"></div>
-                    <p>Loading artworks...</p>
+                    <p>Gathering the spring collection...</p>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery CTA -->
         <section class="gallery-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h3>Ready to Commission Your Own?</h3>
-                    <p>Let's create a unique digital artwork tailored to your vision and requirements.</p>
-                    <a href="#contact" class="cta-button large">Start Your Project</a>
-                </div>
+            <div class="cta-content">
+                <h3>Commission a seasonal collection.</h3>
+                <p>Use the gallery as a starting point for a custom set of visuals tailored to your launch or campaign.</p>
+                <a href="index.html#contact" class="cta-button">Contact The Studio</a>
             </div>
         </section>
     </main>
@@ -130,7 +111,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>InkAndAlgo Studio</h4>
-                <p>Professional digital art studio specializing in algorithmic and generative design</p>
+                <p>Spring-first digital visuals, calm interfaces, and curated creative direction.</p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -138,23 +119,22 @@
                 <p>+1 (555) 123-4567</p>
             </div>
             <div class="footer-section">
-                <h4>Follow Us</h4>
+                <h4>Follow</h4>
                 <div class="social-links">
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Pinterest">PI</a>
+                    <a href="#" aria-label="Email">EM</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 InkAndAlgo LLC. All rights reserved.</p>
+            <p>&copy; 2026 InkAndAlgo Studio. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Modal for artwork details -->
     <div class="modal" id="artwork-modal">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <span class="modal-close" aria-label="Close modal">&times;</span>
             <div class="modal-body">
                 <div class="modal-image"></div>
                 <div class="modal-info">
@@ -162,19 +142,19 @@
                     <p class="modal-description"></p>
                     <div class="modal-details">
                         <div class="detail-item">
-                            <span class="detail-label">Category:</span>
+                            <span class="detail-label">Collection</span>
                             <span class="detail-value"></span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Created:</span>
+                            <span class="detail-label">Created</span>
                             <span class="detail-value"></span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Price:</span>
+                            <span class="detail-label">Price</span>
                             <span class="detail-value price"></span>
                         </div>
                     </div>
-                    <button class="cta-button modal-buy-btn">Purchase Artwork</button>
+                    <button class="cta-button modal-buy-btn" type="button">Inquire About This Piece</button>
                 </div>
             </div>
         </div>
