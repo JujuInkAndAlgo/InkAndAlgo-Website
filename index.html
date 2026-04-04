@@ -249,17 +249,20 @@
             </div>
             <div class="footer-section">
                 <h4>Contact Form</h4>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="4" placeholder="Tell us about your project" required></textarea>
+                <form class="contact-form" action="https://formsubmit.co/inkandAlgo@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="InkAndAlgo website inquiry">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_url" value="https://www.inkandalgo.com/#contact">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Tell us about your project" required></textarea>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>hello@inkandalgo.com</p>
-                <p>+1 (555) 123-4567</p>
+                <p>inkandAlgo@gmail.com</p>
                 <p><a href="gallery.html">Browse the gallery</a></p>
                 <p id="view-counter">Views: loading...</p>
                 <div class="social-links">

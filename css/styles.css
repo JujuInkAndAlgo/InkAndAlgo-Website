@@ -248,8 +248,7 @@ main {
 .service-item p,
 .feature-card p,
 .step p,
-.cta-content p,
-.footer-section p {
+.cta-content p {
     color: var(--muted);
 }
 
@@ -555,6 +554,16 @@ footer {
 .footer-section h4 {
     margin-bottom: 0.9rem;
     font-size: 1.15rem;
+    color: rgba(255, 248, 238, 0.96);
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255, 243, 226, 0.9);
+}
+
+.footer-section a {
+    text-decoration-color: rgba(255, 243, 226, 0.55);
 }
 
 .social-links {
@@ -571,6 +580,7 @@ footer {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.12);
     text-decoration: none;
+    color: rgba(255, 248, 238, 0.96);
 }
 
 .contact-form {
@@ -609,7 +619,7 @@ footer {
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     text-align: center;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 243, 226, 0.82);
 }
 
 .gallery-hero-content {
