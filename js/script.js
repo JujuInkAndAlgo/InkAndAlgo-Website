@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const counterElement = document.getElementById("view-counter");
+    const namespace = "inkandalgo-website";
+    const pathKey = window.location.pathname === "/" ? "home" : window.location.pathname.replace(/[^a-z0-9]/gi, "-").toLowerCase();
+
+    if (counterElement) {
+        fetch("https://api.countapi.xyz/hit/" + namespace + "/" + pathKey)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (typeof data.value === "number") {
+                    counterElement.textContent = "Views: " + data.value.toLocaleString();
+                } else {
+                    counterElement.textContent = "Views unavailable";
+                }
+            })
+            .catch(function () {
+                counterElement.textContent = "Views unavailable";
+            });
+    }
+
     const gallery = document.getElementById("gallery-grid");
 
     if (!gallery) {
