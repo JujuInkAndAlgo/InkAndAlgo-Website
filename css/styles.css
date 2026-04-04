@@ -34,7 +34,7 @@ html {
 }
 
 body {
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
     color: var(--ink);
     background:
         radial-gradient(circle at top left, rgba(255, 156, 188, 0.38), transparent 26%),
@@ -111,6 +111,7 @@ header {
 header h1 {
     font-size: 1.5rem;
     letter-spacing: -0.03em;
+    font-weight: 600;
 }
 
 nav {
@@ -125,6 +126,8 @@ nav a {
     padding: 0.75rem 1rem;
     border-radius: 999px;
     color: var(--muted);
+    font-weight: 500;
+    letter-spacing: -0.01em;
     transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
@@ -152,6 +155,7 @@ nav a.active {
     box-shadow: var(--shadow);
     color: var(--sage-700);
     font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 main {
@@ -217,6 +221,7 @@ main {
     color: var(--sage-700);
     font-size: 0.95rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .hero h2,
@@ -224,9 +229,10 @@ main {
 .section-title,
 .about-text h3,
 .cta-content h3 {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     color: #284128;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
+    font-weight: 700;
 }
 
 .hero h2 {
@@ -249,6 +255,7 @@ main {
 .hero p {
     max-width: 38rem;
     font-size: 1.08rem;
+    font-weight: 400;
 }
 
 .hero-buttons {
@@ -268,6 +275,7 @@ main {
     border-radius: 999px;
     padding: 0.95rem 1.4rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
     background: linear-gradient(135deg, var(--sage-500), #88d671);
     color: var(--white);
     box-shadow: 0 14px 30px rgba(111, 155, 98, 0.22);
@@ -315,6 +323,7 @@ main {
     color: var(--sage-700);
     font-size: 1.4rem;
     margin-bottom: 0.2rem;
+    letter-spacing: -0.03em;
 }
 
 .section-title {
@@ -411,6 +420,7 @@ main {
 .journey-card h4 {
     font-size: 1.3rem;
     margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
 }
 
 .journey-links {
@@ -442,6 +452,7 @@ main {
 .step h4 {
     margin-bottom: 0.8rem;
     font-size: 1.35rem;
+    letter-spacing: -0.02em;
 }
 
 .service-item ul {
