@@ -28,11 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const gallery = document.getElementById("gallery-grid");
-
-    if (!gallery) {
-        return;
-    }
-
     const loading = document.getElementById("loading");
     const modal = document.getElementById("artwork-modal");
     const modalClose = document.querySelector(".modal-close");
@@ -40,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryFilter = document.getElementById("category-filter");
     const sortFilter = document.getElementById("sort-filter");
     const viewButtons = document.querySelectorAll(".view-btn");
+    const galleryCountElements = document.querySelectorAll("[data-gallery-count]");
+    const galleryCategoryCountElements = document.querySelectorAll("[data-gallery-category-count]");
 
     const artworkData = [
         {
             title: "Moon Garden Notes",
-            category: "nightscape",
+            category: "atmospheric",
             description: "Soft lunar light, sketched detail, and a calm atmospheric composition.",
             src: "assets/images/image_001.jpg",
             price: 420,
@@ -68,54 +65,114 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             title: "Evening Bloom",
-            category: "nightscape",
+            category: "atmospheric",
             description: "A darker scene with fine-line details and calm atmospheric light.",
             src: "assets/images/PXL_20210515_201150112.PORTRAIT.jpg",
             price: 440,
             created: new Date(2026, 3, 1)
+        },
+        {
+            title: "Vulnerable",
+            category: "poster",
+            description: "A character-led poster composition built around humor, texture, and crowded handwritten detail.",
+            src: "assets/images/gallery/vulnerable.jpg",
+            price: 280,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Specimen",
+            category: "poster",
+            description: "A playful specimen-board layout mixing creatures, panels, and classroom poster energy.",
+            src: "assets/images/gallery/specimen.jpg",
+            price: 280,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Swirlish",
+            category: "comic",
+            description: "A wide comic scene with a western parody setup, speech bubbles, and pastel pencil shading.",
+            src: "assets/images/gallery/swirlish.jpg",
+            price: 260,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Trauma",
+            category: "comic",
+            description: "A room-scene illustration with expressive lettering, framed details, and comedic tension.",
+            src: "assets/images/gallery/trauma.jpg",
+            price: 260,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Swagger",
+            category: "character",
+            description: "A bold central character poster with oversized type, locker-room framing, and schoolyard chaos.",
+            src: "assets/images/gallery/swagger.jpg",
+            price: 260,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Malleable",
+            category: "character",
+            description: "A high-contrast creature illustration staged like a theatrical poster with handwritten annotations.",
+            src: "assets/images/gallery/malleable.jpg",
+            price: 260,
+            created: new Date(2026, 3, 5)
+        },
+        {
+            title: "Grueling",
+            category: "character",
+            description: "A satirical portrait scene balancing bright title lettering, dialogue, and meme-inspired character work.",
+            src: "assets/images/gallery/grueling.jpeg",
+            price: 260,
+            created: new Date(2026, 3, 5)
         }
     ];
 
-    const categoryCycle = ["botanical", "editorial", "nightscape"];
-    const titleCycle = [
-        "Garden Margin",
-        "Veranda Light",
-        "Wildflower Draft",
-        "Soft Weather Study",
-        "Florals After Rain",
-        "Editorial Stem",
-        "Morning Trellis",
-        "Paper Petals",
-        "Dusky Orchard",
-        "Windowbox Notes",
-        "Bloom Sequence"
-    ];
-    const descriptionCycle = {
-        botanical: "A botanical study built with soft foliage, organic texture, and a collected studio feel.",
-        editorial: "An editorial-style composition shaped around whitespace, arrangement, and controlled color.",
-        nightscape: "A moonlit study balancing dark skies, calm light, and hand-drawn detail."
-    };
+    let filteredItems = [...artworkData];
 
-    const imagePool = [
-        "assets/images/image_001.jpg",
-        "assets/images/PXL_20210515_195102835.PORTRAIT.jpg",
-        "assets/images/PXL_20210515_200025261.PORTRAIT.jpg",
-        "assets/images/PXL_20210515_201150112.PORTRAIT.jpg"
-    ];
+    function formatCategoryLabel(value) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
+    }
 
-    for (let i = 0; i < 11; i += 1) {
-        const category = categoryCycle[i % categoryCycle.length];
-        artworkData.push({
-            title: titleCycle[i],
-            category: category,
-            description: descriptionCycle[category],
-            src: imagePool[i % imagePool.length],
-            price: 320 + i * 25,
-            created: new Date(2026, 2 + (i % 2), 2 + i)
+    function syncGalleryStats() {
+        const categories = new Set(
+            artworkData.map(function (item) {
+                return item.category;
+            })
+        );
+
+        galleryCountElements.forEach(function (element) {
+            element.textContent = String(artworkData.length);
+        });
+
+        galleryCategoryCountElements.forEach(function (element) {
+            element.textContent = String(categories.size);
         });
     }
 
-    let filteredItems = [...artworkData];
+    function populateCategoryOptions() {
+        const categories = Array.from(
+            new Set(
+                artworkData.map(function (item) {
+                    return item.category;
+                })
+            )
+        ).sort();
+
+        categories.forEach(function (category) {
+            const option = document.createElement("option");
+            option.value = category;
+            option.textContent = formatCategoryLabel(category);
+            categoryFilter.appendChild(option);
+        });
+    }
+
+    syncGalleryStats();
+
+    if (!gallery) {
+        return;
+    }
 
     function renderGallery() {
         gallery.innerHTML = "";
@@ -137,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             div.innerHTML = [
                 "<img src=\"" + item.src + "\" alt=\"" + item.title + "\">",
                 "<div class=\"item-info\">",
-                "<span class=\"item-category\">" + item.category + "</span>",
+                "<span class=\"item-category\">" + formatCategoryLabel(item.category) + "</span>",
                 "<h3>" + item.title + "</h3>",
                 "<p>" + item.description + "</p>",
                 "<div class=\"item-price\">$" + item.price.toLocaleString() + "</div>",
@@ -222,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalTitle.textContent = item.title;
         modalDescription.textContent = item.description;
-        modalCategory.textContent = item.category;
+        modalCategory.textContent = formatCategoryLabel(item.category);
         modalCreated.textContent = item.created.toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -250,6 +307,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "\n\nHook this button into your real contact or checkout flow."
         );
     }
+
+    populateCategoryOptions();
 
     searchInput.addEventListener("input", filterItems);
     categoryFilter.addEventListener("change", filterItems);
