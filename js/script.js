@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             created: new Date(2026, 3, 5)
         },
         {
-            title: "Trauma",
+            title: "Stamina",
             category: "comic",
             description: "An interior cartoon scene pairing bold yellow lettering with a worried character, framed wall art, and a sleeping dog on the floor.",
             src: "assets/images/gallery/trauma.jpg",
