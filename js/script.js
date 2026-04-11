@@ -80,6 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
             created: new Date(2026, 3, 11)
         },
         {
+            title: "InkAndAlgo Creations",
+            category: "poster",
+            description: "A composite poster piece built from two existing illustrated works, combining the playful character energy of both into a single framed studio collage.",
+            src: "assets/images/gallery/inkandalgo-creations.jpg",
+            price: 1000,
+            created: new Date(2026, 3, 11)
+        },
+        {
             title: "Vulnerable",
             category: "poster",
             description: "A comic poster with a startled chicken, two puzzled figures, and handwritten side notes arranged against a dotted aqua background.",
