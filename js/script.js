@@ -74,57 +74,57 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Vulnerable",
             category: "poster",
-            description: "A character-led poster composition built around humor, texture, and crowded handwritten detail.",
+            description: "A comic poster with a startled chicken, two puzzled figures, and handwritten side notes arranged against a dotted aqua background.",
             src: "assets/images/gallery/vulnerable.jpg",
-            price: 280,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Specimen",
             category: "poster",
-            description: "A playful specimen-board layout mixing creatures, panels, and classroom poster energy.",
+            description: "A three-panel specimen sheet featuring a lounging character, a cartoon Earth in space, and a pink creature framed like a classroom display.",
             src: "assets/images/gallery/specimen.jpg",
-            price: 280,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Swirlish",
             category: "comic",
-            description: "A wide comic scene with a western parody setup, speech bubbles, and pastel pencil shading.",
+            description: "A western-style comic scene with a cowboy character, sparse buildings, and floating title lettering set against a soft red sky.",
             src: "assets/images/gallery/swirlish.jpg",
-            price: 260,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Trauma",
             category: "comic",
-            description: "A room-scene illustration with expressive lettering, framed details, and comedic tension.",
+            description: "An interior cartoon scene pairing bold yellow lettering with a worried character, framed wall art, and a sleeping dog on the floor.",
             src: "assets/images/gallery/trauma.jpg",
-            price: 260,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Swagger",
             category: "character",
-            description: "A bold central character poster with oversized type, locker-room framing, and schoolyard chaos.",
+            description: "A school hallway poster centered on a sunglasses-wearing character, with lockers, scattered doodles, and groups of onlookers on both sides.",
             src: "assets/images/gallery/swagger.jpg",
-            price: 260,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Malleable",
             category: "character",
-            description: "A high-contrast creature illustration staged like a theatrical poster with handwritten annotations.",
+            description: "A theatrical creature drawing with flame-like shapes, star accents, and handwritten callouts that make it feel like a staged character reveal.",
             src: "assets/images/gallery/malleable.jpg",
-            price: 260,
+            price: 2,
             created: new Date(2026, 3, 5)
         },
         {
             title: "Grueling",
             category: "character",
-            description: "A satirical portrait scene balancing bright title lettering, dialogue, and meme-inspired character work.",
+            description: "A satirical poster featuring a shouting figure, a tired frog with a coffee cup, and layered handwritten text around the large multicolor title.",
             src: "assets/images/gallery/grueling.jpeg",
-            price: 260,
+            price: 2,
             created: new Date(2026, 3, 5)
         }
     ];
