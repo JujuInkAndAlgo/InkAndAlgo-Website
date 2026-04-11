@@ -72,6 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
             created: new Date(2026, 3, 1)
         },
         {
+            title: "Magnolia Study",
+            category: "botanical",
+            description: "A close botanical photograph centered on a white magnolia bloom, with waxy leaves and a soft residential background framing the flower.",
+            src: "assets/images/gallery/magnolia-study.jpg",
+            price: 4,
+            created: new Date(2026, 3, 11)
+        },
+        {
             title: "Vulnerable",
             category: "poster",
             description: "A comic poster with a startled chicken, two puzzled figures, and handwritten side notes arranged against a dotted aqua background.",
